@@ -94,6 +94,16 @@
       #contact-language-bar [data-language-control] { justify-content:space-between; width:100%; }
       .top-contact-email { font-size:12px; min-height:32px; }
     }
+  
+    .mobile-hero-contact { display:none; }
+    @media(max-width:639px) {
+      .contact-language-layout { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; }
+      .contact-language-links { display:flex; }
+      #contact-language-bar [data-language-control] { width:auto; justify-content:flex-end; }
+      #contact-language-bar .top-contact-email,
+      #contact-language-bar .top-contact-social { display:none; }
+      .mobile-hero-contact { display:flex; flex-direction:column; align-items:center; gap:0; }
+    }
   </style>
   <script src="language.js" defer></script>
 </head>
@@ -115,7 +125,7 @@
       <div class="contact-language-links">
         <div data-language-control class="flex items-center gap-1.5 text-gray-200 shrink-0">
           <i class="fa-solid fa-globe text-brand-orange" aria-hidden="true"></i>
-          <label for="language-select" class="text-xs font-semibold text-white whitespace-nowrap">English / Español</label>
+          <label for="language-select" class="text-xs font-semibold text-white whitespace-nowrap">Idioma</label>
           <select id="language-select" aria-label="Language / Idioma" class="bg-brand-card border border-brand-border rounded-md px-2 text-xs min-h-[44px] text-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
             <option value="en">English</option>
             <option value="es">Español</option>
@@ -124,7 +134,7 @@
         <a href="mailto:kn3x.project@gmail.com" class="top-contact-email hover:text-brand-orange transition flex items-center">
           <i class="fa-solid fa-envelope text-brand-orange mr-1"></i> <span>kn3x.project@gmail.com</span>
         </a>
-        <a href="https://instagram.com/kn3xproject" target="_blank" class="hover:text-brand-orange transition flex items-center">
+        <a href="https://instagram.com/kn3xproject" target="_blank" rel="noopener noreferrer" class="top-contact-social hover:text-brand-orange transition flex items-center">
           <i class="fa-brands fa-instagram text-brand-orange mr-1"></i> @kn3xproject
         </a>
       </div>
@@ -243,6 +253,17 @@
         <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Free Estimates</span>
         <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Upfront Pricing</span>
         <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Austin Local</span>
+      </div>
+
+      <div class="mobile-hero-contact mt-4 text-xs text-gray-200">
+        <a href="mailto:kn3x.project@gmail.com" class="inline-flex items-center gap-2 min-h-[44px] hover:text-brand-orange">
+          <i class="fa-solid fa-envelope text-brand-orange" aria-hidden="true"></i>
+          <span>kn3x.project@gmail.com</span>
+        </a>
+        <a href="https://instagram.com/kn3xproject" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 min-h-[44px] hover:text-brand-orange">
+          <i class="fa-brands fa-instagram text-brand-orange" aria-hidden="true"></i>
+          <span>@kn3xproject</span>
+        </a>
       </div>
 
     </div>
