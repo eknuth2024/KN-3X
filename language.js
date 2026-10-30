@@ -37,6 +37,7 @@
     attributes.forEach(({element,attribute,original}) => element.setAttribute(attribute,t(original)));
     document.querySelectorAll('[data-language-status]').forEach(element => element.textContent = t(element.dataset.languageStatus));
     document.getElementById('language-select').value = language;
+    document.querySelector('label[for="language-select"]').textContent = language === 'es' ? 'Idioma' : 'Language';
     try { localStorage.setItem(KEY,language); } catch {}
   }
   window.KNLanguage = {t,status,setLanguage};
