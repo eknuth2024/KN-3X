@@ -4,6 +4,7 @@
   const KEY = 'kn3x-language';
   const normalize = text => text.trim().replace(/\s+/g, ' ');
   let language = 'en';
+  const compactNavigation = {'Services':'Servicios','Handyman':'Reparaciones','Design & 3D Lab':'Diseño 3D','Before & After':'Antes y después','Why Us':'Nosotros'};
   const texts = [];
   const attributes = [];
   const title = document.title;
@@ -13,7 +14,7 @@
     if (node.parentElement.closest('script,style,[data-language-control],[data-language-status]')) continue;
     const original = node.nodeValue;
     const key = normalize(original);
-    if (Object.prototype.hasOwnProperty.call(spanish,key)) texts.push({node,original,key});
+    if (Object.prototype.hasOwnProperty.call(spanish,key)) texts.push({node,original,key,translation:node.parentElement.closest('.header-navigation') ? (compactNavigation[key] || spanish[key]) : spanish[key]});
   }
   document.querySelectorAll('[placeholder],[alt],[aria-label]').forEach(element => {
     if (element.closest('[data-language-control]')) return;
@@ -31,8 +32,8 @@
     language = value === 'es' ? 'es' : 'en';
     document.documentElement.lang = language;
     document.title = t(title);
-    texts.forEach(({node,original,key}) => {
-      node.nodeValue = language === 'es' ? original.replace(/\S[\s\S]*\S|\S/,spanish[key]) : original;
+    texts.forEach(({node,original,translation}) => {
+      node.nodeValue = language === 'es' ? original.replace(/\S[\s\S]*\S|\S/,translation) : original;
     });
     attributes.forEach(({element,attribute,original}) => element.setAttribute(attribute,t(original)));
     document.querySelectorAll('[data-language-status]').forEach(element => element.textContent = t(element.dataset.languageStatus));
