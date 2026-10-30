@@ -83,6 +83,7 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.4);
     }
   </style>
+  <script src="language.js" defer></script>
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
 
@@ -99,7 +100,15 @@
           <i class="fa-solid fa-shield-halved text-brand-orange mr-1.5"></i> Trusted in Texas • Licensed & Insured
         </span>
       </div>
-      <div class="flex items-center space-x-3 sm:space-x-5 ml-auto">
+      <div class="flex flex-wrap items-center gap-3 sm:gap-5 ml-auto">
+        <div data-language-control class="flex items-center gap-1.5 text-gray-200 shrink-0">
+          <i class="fa-solid fa-globe text-brand-orange" aria-hidden="true"></i>
+          <label for="language-select" class="sr-only">Language / Idioma</label>
+          <select id="language-select" aria-label="Language / Idioma" class="bg-brand-card border border-brand-border rounded-md px-2 text-xs min-h-[44px] text-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
         <a href="mailto:kn3x.project@gmail.com" class="hover:text-brand-orange transition flex items-center">
           <i class="fa-solid fa-envelope text-brand-orange mr-1"></i> <span class="hidden sm:inline">kn3x.project@gmail.com</span>
         </a>
@@ -383,7 +392,7 @@
         <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Prepare Handyman Request</button>
         <p class="text-xs text-gray-400">This opens your email app with your request. Review it and press Send. KN3X will reply to confirm the day, time and cost. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
-        <p id="handymanStatus" role="status" class="text-sm text-brand-orange"></p>
+        <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
       </form>
     </div>
   </section>
@@ -738,7 +747,7 @@
           Prepare Email Request
         </button>
         <p class="text-xs text-gray-400">Your email app will open. Review the message and press Send to submit your request.</p>
-        <p id="estimateStatus" role="status" class="text-xs text-brand-orange"></p>
+        <p id="estimateStatus" data-language-status="" role="status" class="text-xs text-brand-orange"></p>
       </form>
     </div>
   </div>
@@ -812,20 +821,20 @@
       const name = value('handymanName'), email = value('handymanEmail'), job = value('handymanJob');
       const status = document.getElementById('handymanStatus');
       if (!name || !email || !job) {
-        status.textContent = 'Please enter your name, email and job description.';
+        window.KNLanguage.status('handymanStatus', 'Please enter your name, email and job description.');
         return;
       }
       const body = [
-        'HANDYMAN SERVICE REQUEST', '',
-        'Name: ' + name, 'Reply email: ' + email,
-        'Phone: ' + (value('handymanPhone') || 'Not provided'),
-        'ZIP: ' + value('handymanZip'),
-        'Preferred days/times: ' + (value('handymanAvailability') || 'Flexible'),
-        '', 'Work requested:', job, '',
-        'Please reply with the proposed day, time and estimated cost.'
+        window.KNLanguage.t('HANDYMAN SERVICE REQUEST'), '',
+        window.KNLanguage.t('Name: ') + name, window.KNLanguage.t('Reply email: ') + email,
+        window.KNLanguage.t('Phone: ') + (value('handymanPhone') || window.KNLanguage.t('Not provided')),
+        window.KNLanguage.t('ZIP: ') + value('handymanZip'),
+        window.KNLanguage.t('Preferred days/times: ') + (value('handymanAvailability') || window.KNLanguage.t('Flexible')),
+        '', window.KNLanguage.t('Work requested:'), job, '',
+        window.KNLanguage.t('Please reply with the proposed day, time and estimated cost.')
       ].join('\n');
-      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent('Handyman request — ' + name) + '&body=' + encodeURIComponent(body);
-      status.textContent = 'Review and send the message in your email app. This website has not sent your request automatically.';
+      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent(window.KNLanguage.t('Handyman request — ') + name) + '&body=' + encodeURIComponent(body);
+      window.KNLanguage.status('handymanStatus', 'Review and send the message in your email app. This website has not sent your request automatically.');
     }
 
     function submitEstimateForm(e) {
@@ -834,15 +843,17 @@
       const name = document.getElementById('estimateName').value.trim();
       const phone = document.getElementById('estimatePhone').value.trim();
       const zip = document.getElementById('modalZip').value.trim();
-      const service = document.getElementById('modalService').value;
+      const serviceSelect = document.getElementById('modalService');
+      const service = serviceSelect.value;
+      const serviceLabel = serviceSelect.selectedOptions[0].textContent;
       const details = document.getElementById('estimateDetails').value.trim();
       if (!name || !phone || !service) {
-        document.getElementById('estimateStatus').textContent = 'Please enter your name, phone number and service.';
+        window.KNLanguage.status('estimateStatus', 'Please enter your name, phone number and service.');
         return;
       }
-      const body = ['Name: ' + name, 'Phone: ' + phone, 'ZIP: ' + zip, 'Service: ' + service, '', 'Project details:', details].join('\n');
-      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent('Free estimate request: ' + service) + '&body=' + encodeURIComponent(body);
-      document.getElementById('estimateStatus').textContent = 'Your email app should open. Review and send the message there. Your request has not been sent by this website.';
+      const body = [window.KNLanguage.t('Name: ') + name, window.KNLanguage.t('Phone: ') + phone, window.KNLanguage.t('ZIP: ') + zip, window.KNLanguage.t('Service: ') + serviceLabel, '', window.KNLanguage.t('Project details:'), details].join('\n');
+      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent(window.KNLanguage.t('Free estimate request: ') + serviceLabel) + '&body=' + encodeURIComponent(body);
+      window.KNLanguage.status('estimateStatus', 'Your email app should open. Review and send the message there. Your request has not been sent by this website.');
     }
   </script>
 </body>
