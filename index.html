@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KN3X PROJECT LLC | Design • Remodeling • Solutions | Austin, TX</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF5E00',
+              orangeDark: '#D64E00',
+              dark: '#0D0F12',
+              card: '#161920',
+              cardHover: '#1D222C',
+              concrete: '#9BA3AF',
+              border: '#262C38'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .compare-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .compare-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 50%;
+    }
+    .compare-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background-color: #FF5E00;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+    .compare-handle::after {
+      content: '◀ ▶';
+      font-size: 11px;
+      font-weight: bold;
+      color: #0D0F12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: #FFFFFF;
+      border: 3px solid #FF5E00;
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
+
+  <!-- TOP BAR: CONTACT & REGION (COMPACTO EN MÓVIL) -->
+  <div class="bg-brand-dark border-b border-brand-border/60 text-[10px] sm:text-xs py-1.5 px-3 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-1.5 sm:gap-2">
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <span class="flex items-center text-gray-400">
+          <i class="fa-solid fa-location-dot text-brand-orange mr-1"></i>
+          Serving <strong class="text-white ml-1">Austin & Area</strong>
+        </span>
+        <span class="hidden md:inline-block text-gray-600">|</span>
+        <span class="hidden md:inline-flex items-center text-gray-300">
+          <i class="fa-solid fa-shield-halved text-brand-orange mr-1.5"></i> Trusted in Texas • Licensed & Insured
+        </span>
+      </div>
+      <div class="flex items-center space-x-3 sm:space-x-5 ml-auto">
+        <a href="mailto:info@kn3xproject.com" class="hover:text-brand-orange transition flex items-center">
+          <i class="fa-solid fa-envelope text-brand-orange mr-1"></i> <span class="hidden xs:inline">info@kn3xproject.com</span>
+        </a>
+        <a href="https://instagram.com/kn3xproject" target="_blank" class="hover:text-brand-orange transition flex items-center">
+          <i class="fa-brands fa-instagram text-brand-orange mr-1"></i> @kn3xproject
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER (AJUSTADO EN ALTURA PARA MÓVIL)[cite: 9] -->
+  <header class="sticky top-0 z-40 bg-[#0E1116]/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-24 flex items-center justify-between">
+      
+      <!-- LOGO KN3X PROJECT (h-10 en móvil, h-20 en pantallas grandes)[cite: 9] -->
+      <a href="#" class="flex items-center py-1">
+        <img src="logo.png" alt="KN3X PROJECT LLC" class="h-10 sm:h-20 w-auto object-contain">
+      </a>
+
+      <!-- NAVIGATION LINKS -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+        <a href="#services" class="hover:text-brand-orange transition">Services</a>
+        <a href="#cad-fabrication" class="hover:text-brand-orange transition flex items-center gap-1.5">
+          <span>Design & 3D Lab</span>
+          <span class="bg-brand-orange/20 text-brand-orange text-[10px] font-black px-1.5 py-0.5 rounded border border-brand-orange/30">VÉRTICE</span>
+        </a>
+        <a href="#gallery" class="hover:text-brand-orange transition">Before & After</a>
+        <a href="#why-us" class="hover:text-brand-orange transition">Why Us</a>
+      </nav>
+
+      <!-- CALL & ESTIMATE BUTTONS (BOTÓN MÁS COMPACTO EN MÓVIL)[cite: 9] -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a href="tel:5124504988" class="hidden sm:flex items-center gap-2 text-white font-heading font-bold text-base hover:text-brand-orange transition">
+          <div class="w-9 h-9 rounded-full bg-brand-orange/20 border border-brand-orange flex items-center justify-center text-brand-orange">
+            <i class="fa-solid fa-phone text-xs"></i>
+          </div>
+          <span>512 450-4988</span>
+        </a>
+        <button onclick="openEstimateModal()" class="bg-brand-orange hover:bg-brand-orangeDark text-white font-bold text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-lg shadow-brand-orange/20 transition transform hover:-translate-y-0.5 whitespace-nowrap">
+          Free Estimate
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON FONDO REDUCIDO Y TIPOGRAFÍA COMPACTA EN MÓVIL[cite: 9] -->
+  <section class="relative py-8 sm:py-28 px-4 sm:px-8 border-b border-brand-border/40 overflow-hidden bg-[#0D0F12]">
+    
+    <!-- Imagen de fondo optimizada en móvil para no desbordar verticalmente[cite: 9] -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="casa-austin.jpg" 
+        alt="Austin TX Residential Home" 
+        class="w-full h-full object-cover object-center scale-100 sm:scale-105"
+        onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop'"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-[#0D0F12]/85 to-[#0D0F12]/80 backdrop-blur-[1px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      
+      <!-- Badge superior reducido[cite: 9] -->
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brand-orange/15 border border-brand-orange/40 text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-6 backdrop-blur-sm">
+        <i class="fa-solid fa-hammer text-brand-orange text-[9px] sm:text-xs"></i> Quality Work • Stronger Communities
+      </div>
+
+      <!-- Título con tamaño controlado (text-2xl en móvil, 6xl en PC)[cite: 9] -->
+      <h1 class="text-2xl xs:text-3xl sm:text-6xl font-heading font-black text-white tracking-tight leading-tight drop-shadow-lg">
+        WE BUILD <span class="text-brand-orange drop-shadow-[0_2px_10px_rgba(255,94,0,0.5)]">YOUR VISION</span>
+      </h1>
+      
+      <!-- Párrafo condensado en móvil[cite: 9] -->
+      <p class="text-xs sm:text-xl text-gray-200 mt-2 sm:mt-4 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow">
+        Same Home. A Whole New Look. Architectural CAD drafting, precision 3D fabrication, smart home automation, security cameras, and turn-key remodeling in Austin, Texas.
+      </p>
+
+      <!-- SEARCH FORM COMPACTO[cite: 7, 9] -->
+      <div class="mt-5 sm:mt-10 max-w-3xl mx-auto bg-brand-card/95 border border-brand-border shadow-2xl p-2.5 sm:p-3 rounded-xl sm:rounded-2xl backdrop-blur-md">
+        <form onsubmit="handleSearch(event)" class="grid grid-cols-1 md:grid-cols-12 gap-2">
+          
+          <div class="md:col-span-5 relative text-left">
+            <label class="block text-[10px] sm:text-[11px] font-bold text-gray-400 px-2 sm:px-3 pt-0.5 sm:pt-1 uppercase">What service do you need?</label>
+            <div class="flex items-center px-2 sm:px-3 py-1">
+              <i class="fa-solid fa-magnifying-glass text-brand-orange mr-2 text-xs sm:text-sm"></i>
+              <select id="hero-service-select" class="w-full bg-transparent text-white font-medium text-xs sm:text-sm focus:outline-none cursor-pointer">
+                <option value="Remodeling" class="bg-brand-card text-white">Remodeling (Kitchen & Bath)</option>
+                <option value="Interior & Exterior Painting" class="bg-brand-card text-white">Interior & Exterior Painting</option>
+                <option value="Carpentry & Custom Woodwork" class="bg-brand-card text-white">Carpentry & Custom Woodwork</option>
+                <option value="Plumbing" class="bg-brand-card text-white">Plumbing Solutions</option>
+                <option value="General Solutions" class="bg-brand-card text-white">General Solutions & Additions</option>
+                <option value="CAD, SolidWorks & 3D Printing" class="bg-brand-card text-white">AutoCAD Plans, SolidWorks & 3D Lab</option>
+                <option value="Smart Home, Networks & Security Cameras" class="bg-brand-card text-white">Networks, Security Cameras & Smart Automation</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 relative text-left border-t md:border-t-0 md:border-l border-brand-border/80 pt-1 md:pt-0">
+            <label class="block text-[10px] sm:text-[11px] font-bold text-gray-400 px-2 sm:px-3 pt-0.5 sm:pt-1 uppercase">Zip Code</label>
+            <div class="flex items-center px-2 sm:px-3 py-1">
+              <i class="fa-solid fa-location-crosshairs text-gray-500 mr-2 text-xs sm:text-sm"></i>
+              <input type="text" id="hero-zip" value="78701" placeholder="e.g. 78704" maxlength="5" class="w-full bg-transparent text-white font-medium text-xs sm:text-sm focus:outline-none">
+            </div>
+          </div>
+
+          <div class="md:col-span-3 flex items-center">
+            <button type="submit" class="w-full h-full min-h-[40px] sm:min-h-[48px] bg-brand-orange hover:bg-brand-orangeDark text-white font-heading font-bold text-xs sm:text-sm rounded-lg sm:rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-brand-orange/25">
+              <span>Get Estimate</span>
+              <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- TRUST BADGES -->
+      <div class="mt-4 sm:mt-8 flex flex-wrap justify-center items-center gap-2 sm:gap-6 text-[10px] sm:text-xs text-gray-300 font-medium">
+        <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Free Estimates</span>
+        <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Upfront Pricing</span>
+        <span class="bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Austin Local</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 1. EXPERT HOME SERVICES -->
+  <section id="services" class="py-14 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-10 sm:mb-16">
+      <h2 class="text-xs font-bold text-brand-orange tracking-widest uppercase">Expert Home & Technical Services</h2>
+      <p class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">What can we help you build or install today?</p>
+      <div class="w-16 sm:w-20 h-1 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
+    </div>
+
+    <!-- 6 COMPREHENSIVE SERVICE CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      
+      <!-- SERVICE 1: REMODELING[cite: 2] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            Full Remodeling
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Kitchens • Bathrooms • Flooring</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Complete residential renovations, open-concept conversions, custom tile work, luxury vinyl plank and hardwood flooring, and structural home additions[cite: 2].
+          </p>
+        </div>
+        <button onclick="requestSpecificService('Full Remodeling')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- SERVICE 2: PAINTING[cite: 2] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-paint-roller"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            Interior & Exterior Painting
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Fresh spaces, brighter living</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Kitchen cabinet repainting, seamless drywall repair, weather-resistant Texas exterior coatings, and clean architectural interior finishes[cite: 2].
+          </p>
+        </div>
+        <button onclick="requestSpecificService('Interior & Exterior Painting')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- SERVICE 3: CARPENTRY[cite: 2] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-hammer"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            Carpentry & Custom Woodwork
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Details that make a difference</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Custom built-ins, baseboards, crown molding, outdoor decks, cedar pergolas, and precision architectural woodwork tailored to your home layout[cite: 2].
+          </p>
+        </div>
+        <button onclick="requestSpecificService('Carpentry & Custom Woodwork')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- SERVICE 4: PLUMBING[cite: 2] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-faucet-drip"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            Plumbing Solutions
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Reliable solutions</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Modern fixture installations, freestanding tub hookups, walk-in shower rough-ins, kitchen island sink relocations, and comprehensive leak prevention[cite: 2].
+          </p>
+        </div>
+        <button onclick="requestSpecificService('Plumbing')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- SERVICE 5: GENERAL SOLUTIONS[cite: 2] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            General Solutions
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">One team, all your needs</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Home structural maintenance, specialized repairs, dedicated project oversight, and end-to-end turn-key residential remodeling management[cite: 2].
+          </p>
+        </div>
+        <button onclick="requestSpecificService('General Solutions')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- SERVICE 6: SMART HOME, SECURITY CAMERAS, NETWORKS & RACKS -->
+      <div class="bg-brand-card border-2 border-brand-orange/70 rounded-xl p-5 sm:p-6 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group relative shadow-lg shadow-brand-orange/10">
+        <span class="absolute -top-3 right-4 bg-brand-orange text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+          Smart Home & Security
+        </span>
+        <div>
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
+            Smart Home, Networks & Security
+          </h3>
+          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Cameras • Automation • WiFi & Racks</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
+            Turn your house into a fully integrated Smart Home with tailored automations, 4K PoE/IP security cameras, enterprise mesh WiFi coverage, Cat6/Cat6A structured cabling, server racks, patch panels, and centralized local servers/NAS.
+          </p>
+        </div>
+        <button onclick="requestSpecificService('Smart Home, Networks & Security Cameras')" class="mt-5 sm:mt-6 text-xs font-bold text-brand-orange flex items-center gap-1.5 transition">
+          Request Smart Tech Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. ARCHITECTURAL CAD, SOLIDWORKS & 3D PRINTING SECTION[cite: 8] -->
+  <section id="cad-fabrication" class="py-14 sm:py-20 px-4 sm:px-8 bg-[#0D1017] border-y border-brand-border relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/15 border border-brand-orange/30 text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-3">
+            <i class="fa-solid fa-microchip"></i> Digital Design & Additive Manufacturing
+          </div>
+          <h2 class="text-2xl sm:text-5xl font-heading font-black text-white">
+            CAD Drafting, SolidWorks & <span class="text-brand-orange">3D Fabrication</span>
+          </h2>
+        </div>
+        <p class="text-gray-400 text-xs sm:text-sm max-w-lg mt-3 lg:mt-0 leading-relaxed">
+          Bridging technical architectural engineering with high-fidelity digital fabrication. From permit-ready drafting to custom functional hardware manufactured in-house.
+        </p>
+      </div>
+
+      <!-- 3 LAB CARDS[cite: 8] -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
+        
+        <!-- CARD 1: AUTOCAD[cite: 8] -->
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-5 sm:p-7 hover:border-brand-orange/60 transition group relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute -right-6 -bottom-6 text-neutral-800/40 text-8xl font-black select-none pointer-events-none group-hover:text-brand-orange/10 transition">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-800 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-neutral-700">
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
+              AutoCAD Architectural Plans
+            </h3>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Drafting & Building Permits</p>
+            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>As-built measurements, detailed floor plans, and architectural elevations[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Space planning and layout optimizations for kitchens, baths, and additions[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Technical permit-ready documentation for City of Austin building reviews[cite: 8].</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="requestSpecificService('AutoCAD Architectural Plans')" class="mt-6 sm:mt-8 text-xs font-bold text-brand-orange flex items-center gap-2 group-hover:translate-x-1 transition">
+            Request Drafting Service <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- CARD 2: SOLIDWORKS[cite: 8] -->
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-5 sm:p-7 hover:border-brand-orange/60 transition group relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute -right-6 -bottom-6 text-neutral-800/40 text-8xl font-black select-none pointer-events-none group-hover:text-brand-orange/10 transition">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-800 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-neutral-700">
+              <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
+              SolidWorks 3D Modeling
+            </h3>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Mechanical & Product Engineering</p>
+            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>3D parametric assembly modeling, custom brackets, and technical enclosures[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Precision tolerances and mechanical fits for moving or interlocking parts[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Manufacturing-ready CAD exports (.STEP, .IGES) for rapid tooling and CNC[cite: 8].</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="requestSpecificService('SolidWorks 3D Modeling')" class="mt-6 sm:mt-8 text-xs font-bold text-brand-orange flex items-center gap-2 group-hover:translate-x-1 transition">
+            Consult 3D Engineering <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- CARD 3: 3D PRINTING & VÉRTICE LAB[cite: 8] -->
+        <div class="bg-gradient-to-b from-brand-card to-[#1E232F] border-2 border-brand-orange/70 rounded-2xl p-5 sm:p-7 hover:border-brand-orange transition group relative overflow-hidden flex flex-col justify-between shadow-xl shadow-brand-orange/10">
+          <span class="absolute top-4 right-4 bg-brand-orange text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
+            In-House Lab
+          </span>
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-brand-orange/40">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
+              Custom 3D Printing
+            </h3>
+            <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mt-1">Powered by Vértice 3D</p>
+            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>High-precision FDM manufacturing in performance engineering filaments (PLA, TPU, PETG)[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Custom magnetic holders, architectural accessories, cable ducts, and fixtures[cite: 8].</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
+                <span>Rapid iterative prototyping and small-batch end-use production runs[cite: 8].</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-brand-border/80 flex items-center justify-between">
+            <button onclick="requestSpecificService('Custom 3D Printing (Vértice)')" class="text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
+              Order Custom Print <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://vertice3d.com" target="_blank" class="text-[10px] sm:text-[11px] font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/30 px-2 sm:px-2.5 py-1 rounded hover:bg-brand-orange hover:text-white transition">
+              Visit Vértice 3D ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VÉRTICE LAB BANNER[cite: 8] -->
+      <div class="bg-brand-card border border-brand-border rounded-xl p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+        <div class="flex items-center gap-3 sm:gap-4">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-brand-orange text-xl sm:text-2xl flex-shrink-0">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <h4 class="font-heading font-black text-white text-sm sm:text-base">Have a 3D model (.STL, .STEP) or need a custom functional part?[cite: 8]</h4>
+            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5">We fabricate custom components in our in-house additive shop or design the model from concept to completion[cite: 8].</p>
+          </div>
+        </div>
+        <button onclick="requestSpecificService('Custom 3D Fabrication / Project Inquiry')" class="w-full md:w-auto bg-neutral-800 hover:bg-brand-orange text-white font-bold text-xs px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-neutral-700 hover:border-brand-orange transition whitespace-nowrap text-center">
+          Upload / Consult Design Specs
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. BEFORE & AFTER SECTION -->
+  <section id="gallery" class="py-14 sm:py-20 bg-[#0E1116] border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
+        <div>
+          <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Real Results in Texas</span>
+          <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">Before & After Showcase</h2>
+        </div>
+        <p class="text-gray-400 text-xs sm:text-sm max-w-md mt-2 md:mt-0">
+          Slide left or right to see how KN3X transforms outdated residential structures into modern spaces.
+        </p>
+      </div>
+
+      <!-- BEFORE & AFTER COMPARISON SLIDER -->
+      <div class="compare-container rounded-2xl border border-brand-border shadow-2xl h-[320px] sm:h-[540px] max-w-4xl mx-auto relative overflow-hidden" id="compareContainer">
+        
+        <!-- AFTER IMAGE[cite: 2] -->
+        <img 
+          src="after.jpg" 
+          alt="KN3X Remodel After" 
+          class="w-full h-full object-cover select-none pointer-events-none"
+          onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop'"
+        >
+        <span class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-brand-orange text-white text-[10px] sm:text-xs font-heading font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg z-10 shadow">
+          AFTER (KN3X Finished)
+        </span>
+
+        <!-- BEFORE IMAGE[cite: 2] -->
+        <div class="compare-overlay" id="compareOverlay">
+          <img 
+            src="before.jpg" 
+            alt="KN3X Remodel Before" 
+            class="absolute top-0 left-0 max-w-none h-full object-cover select-none pointer-events-none" 
+            id="beforeImg"
+            onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop'"
+          >
+          <span class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-black/80 text-gray-300 text-[10px] sm:text-xs font-heading font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg z-10">
+            BEFORE
+          </span>
+        </div>
+
+        <div class="compare-handle" id="compareHandle"></div>
+      </div>
+
+      <!-- FLYER INTERIOR SHOWCASES[cite: 2] -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mt-8 sm:mt-12">
+        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Living Room Remodeling">
+          <div class="p-3.5 sm:p-4">
+            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Open Concept Living</h4>
+            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Flooring, lighting and wall relocation.</p>
+          </div>
+        </div>
+        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Kitchen Remodeling">
+          <div class="p-3.5 sm:p-4">
+            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Modern Chef Kitchen</h4>
+            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Custom islands, quartz counters and plumbing.</p>
+          </div>
+        </div>
+        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Bathroom Remodeling">
+          <div class="p-3.5 sm:p-4">
+            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Luxury Glass Shower</h4>
+            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Tile work, vanity installation & fixtures.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION (CTA) BANNER -->
+  <section class="py-12 sm:py-16 px-4 sm:px-8 bg-gradient-to-r from-brand-orangeDark via-brand-orange to-[#ff7a29] text-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
+      <div>
+        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-wider bg-black/20 px-2.5 sm:px-3 py-1 rounded-full">Fast Turnaround</span>
+        <h2 class="text-2xl sm:text-4xl font-heading font-black mt-2">Ready to transform your home?</h2>
+        <p class="text-white/90 text-xs sm:text-sm mt-1 max-w-xl">
+          Call us directly for a free walkthrough and guaranteed upfront estimation in the Greater Austin area.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="tel:5124504988" class="bg-black hover:bg-neutral-900 text-white font-heading font-black text-base sm:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl transition shadow-xl flex items-center gap-2.5 sm:gap-3">
+          <i class="fa-solid fa-phone text-brand-orange text-sm"></i>
+          <span>(512) 450-4988</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark border-t border-brand-border pt-12 sm:pt-16 pb-8 px-4 sm:px-8 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-brand-border/60">
+      
+      <!-- Col 1: Brand & Bio -->
+      <div class="md:col-span-2">
+        <div class="mb-4 sm:mb-5">
+          <img src="logo.png" alt="KN3X PROJECT LLC" class="h-10 sm:h-16 w-auto object-contain">
+        </div>
+        <p class="text-xs text-gray-400 max-w-md leading-relaxed">
+          Residential remodeling, architectural design, smart home automation, security cameras, and general contractor solutions in Austin, Texas. Delivering lasting value and high-precision craftsmanship across Texas homes.
+        </p>
+        <div class="mt-3 sm:mt-4 flex items-center gap-2 text-xs text-gray-300 font-semibold">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500"></span> Available for new remodel & smart tech projects
+        </div>
+      </div>
+
+      <!-- Col 2: Capabilities -->
+      <div>
+        <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-2.5 sm:mb-3">Capabilities</h4>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs">
+          <li><a href="#services" class="hover:text-brand-orange">Kitchen & Bath Remodels</a></li>
+          <li><a href="#cad-fabrication" class="hover:text-brand-orange">AutoCAD Drafting & Permits</a></li>
+          <li><a href="#cad-fabrication" class="hover:text-brand-orange">SolidWorks 3D Modeling</a></li>
+          <li><a href="#cad-fabrication" class="hover:text-brand-orange text-brand-orange font-bold">Vértice 3D Printing Lab</a></li>
+          <li><a href="#services" class="hover:text-brand-orange">Smart Automation & Cameras</a></li>
+          <li><a href="#services" class="hover:text-brand-orange">WiFi Networks & Server Racks</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact Details -->
+      <div>
+        <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-2.5 sm:mb-3">Get in Touch</h4>
+        <p class="text-xs text-gray-300 font-bold mb-1">KN3X PROJECT LLC</p>
+        <p class="text-xs text-gray-400">Serving Austin, TX & Surrounding Areas</p>
+        <p class="text-xs text-brand-orange font-bold mt-2">Phone: (512) 450-4988</p>
+        <p class="text-xs text-gray-400">Email: info@kn3xproject.com</p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-3 sm:gap-4">
+      <p>© 2026 KN3X PROJECT LLC. All rights reserved. Texas Homes • Texas Values.</p>
+      <div class="flex space-x-6">
+        <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-400">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FREE ESTIMATE MODAL -->
+  <div id="estimateModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-lg w-full p-5 sm:p-8 relative shadow-2xl">
+      <button onclick="closeEstimateModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-5 sm:mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-brand-orange/20 text-brand-orange rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+          <i class="fa-solid fa-clipboard-list text-lg sm:text-xl"></i>
+        </div>
+        <h3 class="font-heading font-black text-xl sm:text-2xl text-white">Get Your Free Estimate</h3>
+        <p class="text-xs text-gray-400 mt-1">Tell us about your project in Austin or surrounding areas</p>
+      </div>
+
+      <form onsubmit="submitEstimateForm(event)" class="space-y-3.5 sm:space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+          <input type="text" required placeholder="John Doe" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Phone Number</label>
+            <input type="tel" required placeholder="(512) 000-0000" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Zip Code</label>
+            <input type="text" id="modalZip" required placeholder="78701" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Select Service</label>
+          <select id="modalService" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+            <option value="Remodeling">Remodeling (Kitchens, Bathrooms, Additions)</option>
+            <option value="Interior & Exterior Painting">Interior & Exterior Painting</option>
+            <option value="Carpentry & Custom Woodwork">Carpentry & Custom Woodwork</option>
+            <option value="Plumbing">Plumbing Solutions</option>
+            <option value="General Solutions">General Solutions / Maintenance</option>
+            <option value="AutoCAD Architectural Plans">AutoCAD Architectural Drafting & Plans</option>
+            <option value="SolidWorks 3D Modeling">SolidWorks 3D Parts & Mechanical Design</option>
+            <option value="Custom 3D Printing (Vértice)">Custom 3D Printing Lab (Vértice 3D)</option>
+            <option value="Smart Home, Networks & Security Cameras">Smart Home Automation, Security Cameras & Networks</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Project Details (Optional)</label>
+          <textarea rows="3" placeholder="Briefly describe what you're looking to design, build, automate or install..." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-heading font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-lg transition shadow-lg mt-2">
+          Request Free Consultation
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: SLIDER & FORM HANDLERS -->
+  <script>
+    const container = document.getElementById('compareContainer');
+    const overlay = document.getElementById('compareOverlay');
+    const handle = document.getElementById('compareHandle');
+    const beforeImg = document.getElementById('beforeImg');
+
+    function syncImgWidth() {
+      if (container && beforeImg) {
+        beforeImg.style.width = `${container.offsetWidth}px`;
+      }
+    }
+    window.addEventListener('resize', syncImgWidth);
+    syncImgWidth();
+
+    let isDown = false;
+    function moveSlider(clientX) {
+      const rect = container.getBoundingClientRect();
+      let pos = clientX - rect.left;
+      if (pos < 0) pos = 0;
+      if (pos > rect.width) pos = rect.width;
+      const percentage = (pos / rect.width) * 100;
+      overlay.style.width = percentage + '%';
+      handle.style.left = percentage + '%';
+    }
+
+    container.addEventListener('mousedown', () => isDown = true);
+    window.addEventListener('mouseup', () => isDown = false);
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      moveSlider(e.clientX);
+    });
+
+    container.addEventListener('touchstart', () => isDown = true);
+    window.addEventListener('touchend', () => isDown = false);
+    container.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      moveSlider(e.touches[0].clientX);
+    });
+
+    function openEstimateModal() {
+      document.getElementById('estimateModal').classList.remove('hidden');
+    }
+    function closeEstimateModal() {
+      document.getElementById('estimateModal').classList.add('hidden');
+    }
+
+    function requestSpecificService(serviceName) {
+      document.getElementById('modalService').value = serviceName;
+      openEstimateModal();
+    }
+
+    function handleSearch(e) {
+      e.preventDefault();
+      const service = document.getElementById('hero-service-select').value;
+      const zip = document.getElementById('hero-zip').value;
+      document.getElementById('modalService').value = service;
+      document.getElementById('modalZip').value = zip;
+      openEstimateModal();
+    }
+
+    function submitEstimateForm(e) {
+      e.preventDefault();
+      alert('Thank you! Your inquiry has been sent to KN3X PROJECT LLC. We will contact you shortly.');
+      closeEstimateModal();
+    }
+  </script>
+</body>
+</html>
