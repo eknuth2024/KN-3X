@@ -126,6 +126,22 @@
       .header-brand img { max-width:100%; }
       .header-actions { min-width:0; }
     }
+  
+    .header-navigation a + a { position:relative; }
+    .header-navigation a + a::before {
+      content:"";
+      position:absolute;
+      left:-8px;
+      top:50%;
+      transform:translateY(-50%);
+      width:1px;
+      height:22px;
+      background:linear-gradient(to bottom, transparent, #FF5E00 30%, #ffffff 70%, transparent);
+      pointer-events:none;
+    }
+    @media(min-width:1024px) {
+      .header-navigation a + a::before { left:-7px; }
+    }
   </style>
   <script src="language.js?v=compact-nav-2" defer></script>
 </head>
