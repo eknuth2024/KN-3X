@@ -104,6 +104,25 @@
       #contact-language-bar .top-contact-social { display:none; }
       .mobile-hero-contact { display:flex; flex-direction:column; align-items:center; gap:0; }
     }
+  
+    .site-header-row { gap:16px; }
+    .header-brand, .header-actions { flex-shrink:0; }
+    .header-navigation { flex:1; min-width:0; gap:16px; overflow-x:auto; padding:8px 0; }
+    .header-navigation a { flex-shrink:0; white-space:nowrap; }
+    .header-actions a, .header-actions button { white-space:nowrap; }
+    @media(min-width:1024px) {
+      .header-brand img { max-width:170px; height:64px; }
+      .header-navigation { font-size:12px; gap:14px; }
+    }
+    @media(min-width:1024px) and (max-width:1535px) {
+      .header-actions a[href^="tel:"] { display:none; }
+    }
+    @media(max-width:639px) {
+      .site-header-row { gap:8px; padding-left:12px; padding-right:12px; }
+      .header-brand { flex-shrink:1; min-width:0; }
+      .header-brand img { max-width:100%; }
+      .header-actions { min-width:0; }
+    }
   </style>
   <script src="language.js" defer></script>
 </head>
@@ -143,15 +162,15 @@
 
   <!-- NAVIGATION HEADER (AJUSTADO EN ALTURA PARA MÓVIL) -->
   <header class="sticky top-0 z-40 bg-[#0E1116]/95 backdrop-blur-md border-b border-brand-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 sm:h-24 flex items-center justify-between">
+    <div class="site-header-row max-w-7xl mx-auto px-4 sm:px-8 h-20 sm:h-24 flex items-center justify-between">
       
       <!-- LOGO KN3X PROJECT (h-10 en móvil, h-20 en pantallas grandes) -->
-      <a href="#" class="flex items-center py-1">
+      <a href="#" class="header-brand flex items-center py-1">
         <img src="logo.PNG" alt="KN3X PROJECT LLC" class="h-14 sm:h-20 w-auto max-w-[180px] sm:max-w-none object-contain">
       </a>
 
       <!-- NAVIGATION LINKS -->
-      <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+      <nav class="header-navigation hidden lg:flex items-center text-sm font-semibold text-gray-300">
         <a href="#services" class="hover:text-brand-orange transition">Services</a>
         <a href="#handyman" class="hover:text-brand-orange transition">Handyman</a>
         <a href="#cad-fabrication" class="hover:text-brand-orange transition flex items-center gap-1.5">
@@ -163,7 +182,7 @@
       </nav>
 
       <!-- CALL & ESTIMATE BUTTONS (BOTÓN MÁS COMPACTO EN MÓVIL) -->
-      <div class="flex items-center gap-2 sm:gap-4">
+      <div class="header-actions flex items-center gap-2 sm:gap-4">
         <a href="tel:5124504988" class="hidden sm:flex items-center gap-2 text-white font-heading font-bold text-base hover:text-brand-orange transition">
           <div class="w-9 h-9 rounded-full bg-brand-orange/20 border border-brand-orange flex items-center justify-center text-brand-orange">
             <i class="fa-solid fa-phone text-xs"></i>
