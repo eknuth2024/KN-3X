@@ -128,6 +128,51 @@
     }
   
 
+  
+    /* Glass highlight for the upper navigation. */
+    .header-navigation {
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+    .header-navigation > a {
+      position:relative;
+      isolation:isolate;
+      padding:10px 9px;
+      border:1px solid transparent;
+      border-radius:12px;
+      background:transparent;
+      transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,color .22s ease;
+    }
+    .header-navigation > a::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 55%);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+    .header-navigation > a:focus-visible {
+      outline:2px solid #FF5E00;
+      outline-offset:2px;
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.3);
+    }
+    @media(hover:hover) {
+      .header-navigation > a:hover {
+        color:#fff;
+        background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,94,0,.06));
+        border-color:rgba(255,255,255,.3);
+        backdrop-filter:blur(12px) saturate(150%);
+        -webkit-backdrop-filter:blur(12px) saturate(150%);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 12px rgba(0,0,0,.16);
+      }
+      .header-navigation > a:hover::after { opacity:1; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .header-navigation > a,.header-navigation > a::after { transition:none; }
+    }
   </style>
   <script src="language.js?v=compact-nav-2" defer></script>
 </head>
