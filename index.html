@@ -122,6 +122,7 @@
       <!-- NAVIGATION LINKS -->
       <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-300">
         <a href="#services" class="hover:text-brand-orange transition">Services</a>
+        <a href="#handyman" class="hover:text-brand-orange transition">Handyman</a>
         <a href="#cad-fabrication" class="hover:text-brand-orange transition flex items-center gap-1.5">
           <span>Design & 3D Lab</span>
           <span class="bg-brand-orange/20 text-brand-orange text-[10px] font-black px-1.5 py-0.5 rounded border border-brand-orange/30">VÉRTICE</span>
@@ -354,6 +355,36 @@
         </button>
       </div>
 
+    </div>
+  </section>
+
+  
+  <section id="handyman" class="py-12 sm:py-16 px-4 sm:px-8 bg-brand-dark border-y border-brand-border">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <p class="text-xs font-bold text-brand-orange uppercase tracking-widest">Small Jobs · Personal Service</p>
+        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Handyman Services</h2>
+        <p class="text-sm text-gray-300 mt-4 leading-relaxed">Need furniture assembled, shelves installed or help with a small home project? Tell us what you need and we will reply with availability and an estimated price.</p>
+        <ul class="text-sm text-gray-300 mt-5 space-y-3">
+          <li>• Furniture assembly: desks, beds, dressers and more</li>
+          <li>• Shelves, curtain rods, pictures and accessory installation</li>
+          <li>• Small repairs and home maintenance</li>
+        </ul>
+        <p class="text-xs text-gray-400 mt-5">Service in Austin and surrounding areas. Your preferred date is a request; the day, time and price will be confirmed with you before booking.</p>
+      </div>
+      <form id="handymanForm" onsubmit="submitHandymanRequest(event)" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
+        <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div><label for="handymanPhone" class="block text-sm mb-1">Phone (optional)</label><input type="tel" id="handymanPhone" name="phone" autocomplete="tel" maxlength="40" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+          <div><label for="handymanZip" class="block text-sm mb-1">ZIP code</label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        </div>
+        <div><label for="handymanJob" class="block text-sm mb-1">What do you need done?</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Assemble an IKEA desk and install two shelves. Include the model, quantity and any useful details." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
+        <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Prepare Handyman Request</button>
+        <p class="text-xs text-gray-400">This opens your email app with your request. Review it and press Send. KN3X will reply to confirm the day, time and cost. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
+        <p id="handymanStatus" role="status" class="text-sm text-brand-orange"></p>
+      </form>
     </div>
   </section>
 
@@ -625,6 +656,7 @@
       <div>
         <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-2.5 sm:mb-3">Capabilities</h4>
         <ul class="space-y-1.5 sm:space-y-2 text-xs">
+          <li><a href="#handyman" class="hover:text-brand-orange">Handyman & Furniture Assembly</a></li>
           <li><a href="#services" class="hover:text-brand-orange">Kitchen & Bath Remodels</a></li>
           <li><a href="#cad-fabrication" class="hover:text-brand-orange">AutoCAD Drafting & Permits</a></li>
           <li><a href="#cad-fabrication" class="hover:text-brand-orange">SolidWorks 3D Modeling</a></li>
@@ -703,8 +735,10 @@
           <textarea id="estimateDetails" name="details" maxlength="2000" rows="3" placeholder="Briefly describe what you're looking to design, build, automate or install..." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea>
         </div>
         <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-heading font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-lg transition shadow-lg mt-2">
-          Request Free Consultation
+          Prepare Email Request
         </button>
+        <p class="text-xs text-gray-400">Your email app will open. Review the message and press Send to submit your request.</p>
+        <p id="estimateStatus" role="status" class="text-xs text-brand-orange"></p>
       </form>
     </div>
   </div>
@@ -768,6 +802,30 @@
       document.getElementById('modalService').value = service;
       document.getElementById('modalZip').value = zip;
       openEstimateModal();
+    }
+
+
+    function submitHandymanRequest(event) {
+      event.preventDefault();
+      if (!event.currentTarget.reportValidity()) return;
+      const value = id => document.getElementById(id).value.trim();
+      const name = value('handymanName'), email = value('handymanEmail'), job = value('handymanJob');
+      const status = document.getElementById('handymanStatus');
+      if (!name || !email || !job) {
+        status.textContent = 'Please enter your name, email and job description.';
+        return;
+      }
+      const body = [
+        'HANDYMAN SERVICE REQUEST', '',
+        'Name: ' + name, 'Reply email: ' + email,
+        'Phone: ' + (value('handymanPhone') || 'Not provided'),
+        'ZIP: ' + value('handymanZip'),
+        'Preferred days/times: ' + (value('handymanAvailability') || 'Flexible'),
+        '', 'Work requested:', job, '',
+        'Please reply with the proposed day, time and estimated cost.'
+      ].join('\n');
+      window.location.href = 'mailto:info@kn3xproject.com?subject=' + encodeURIComponent('Handyman request — ' + name) + '&body=' + encodeURIComponent(body);
+      status.textContent = 'Review and send the message in your email app. This website has not sent your request automatically.';
     }
 
     function submitEstimateForm(e) {
