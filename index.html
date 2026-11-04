@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Refresh starts at the top; direct section links and back navigation still work.
+    (() => {
+      const navigation = performance.getEntriesByType('navigation')[0];
+      if (!navigation || navigation.type !== 'reload') return;
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+      const resetScroll = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      window.addEventListener('pageshow', () => {
+        resetScroll();
+        if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+      }, { once: true });
+    })();
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Painting, landscaping, plumbing, carpentry, electrical work and network installations in Austin, TX. KN3X brings careful planning and precision to residential projects.">
