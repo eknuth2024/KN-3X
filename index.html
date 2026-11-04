@@ -28,7 +28,7 @@
   <!-- Google Fonts: Montserrat & Inter -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -226,14 +226,14 @@
     }
 
 
-    .texas-service-badge{position:absolute;z-index:10;right:clamp(20px,4vw,70px);top:45px;width:230px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));pointer-events:none}
+    .texas-service-badge{position:absolute;z-index:10;right:-250px;top:-65px;width:230px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));pointer-events:none}
     .texas-service-badge svg{display:block;width:100%;height:auto}
-    .texas-service-copy{position:absolute;top:36%;left:27%;width:66%;text-align:center;font-family:Montserrat,sans-serif;text-transform:uppercase;color:#fff;font-weight:700}
-    .texas-service-copy span{display:block;font-size:10px;line-height:1.4}
-    .texas-service-copy strong{display:block;color:#ff5e00;font-size:30px;line-height:1.25;font-weight:900}
-    .texas-service-copy span:last-child{font-size:8px}
+    .texas-service-copy{position:absolute;top:33%;left:26%;width:67%;text-align:center;font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;color:#fff;font-weight:600}
+    .texas-service-copy span{display:block;font-size:16px;line-height:1.35;letter-spacing:.035em;white-space:nowrap}
+    .texas-service-copy strong{display:block;color:#ff5e00;font-size:45px;line-height:1.25;font-weight:700;letter-spacing:.01em}
+    .texas-service-copy span:last-child{font-size:11px;letter-spacing:0}
     @media(min-width:1100px){#home .hero-main-content{max-width:1000px;margin-left:auto;margin-right:260px}}
-    @media(max-width:1099px){.texas-service-badge{position:relative;top:auto;right:auto;width:135px;margin:-8px 0 12px auto}.texas-service-copy span{font-size:7px}.texas-service-copy strong{font-size:18px}.texas-service-copy span:last-child{font-size:5px}}
+    @media(max-width:1099px){.texas-service-badge{position:relative;top:auto;right:auto;width:165px;margin:16px auto 0}.texas-service-copy span{font-size:12px}.texas-service-copy strong{font-size:33px}.texas-service-copy span:last-child{font-size:8px}}
 
 </style>
   <script src="language.js?v=texas-badge-17" defer></script>
@@ -318,10 +318,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-[#0D0F12]/85 to-[#0D0F12]/80 backdrop-blur-[1px]"></div>
     </div>
 
-<div class="texas-service-badge" role="img" aria-label="Serving Austin and surrounding areas">
-<svg viewBox="0 0 300 290" aria-hidden="true" focusable="false"><path fill="#252a30" stroke="#717780" stroke-width="1.5" d="M76 12H143V62L155 70L165 68L180 78L190 75L203 83L215 78L232 87L245 83L259 91L275 89L277 124L286 148L282 177L272 192L249 202L229 218L211 226L202 244L201 270L183 264L169 250L159 232L146 224L139 206L124 199L112 180L98 175L87 184L75 180L64 161L49 152L39 133L20 122L10 108H76Z"/></svg>
-<div class="texas-service-copy"><span>Serving</span><strong>AUSTIN</strong><span>&amp; Surrounding Areas</span></div>
-</div>
+
     <div class="hero-main-content relative z-10 max-w-5xl mx-auto text-center">
       
       <!-- Badge superior reducido -->
@@ -338,6 +335,11 @@
       <p class="text-xs sm:text-xl text-gray-200 mt-2 sm:mt-4 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow">
         Bring your home improvement plans to life in Austin. From painting and landscaping to plumbing, carpentry, electrical work and network installation, we help you create spaces that look better and work better.
       </p>
+
+<div class="texas-service-badge" role="img" aria-label="Serving Austin and surrounding areas">
+<svg viewBox="0 0 300 290" aria-hidden="true" focusable="false"><path fill="#252a30" stroke="#717780" stroke-width="1.5" d="M76 12H143V62L155 70L165 68L180 78L190 75L203 83L215 78L232 87L245 83L259 91L275 89L277 124L286 148L282 177L272 192L249 202L229 218L211 226L202 244L201 270L183 264L169 250L159 232L146 224L139 206L124 199L112 180L98 175L87 184L75 180L64 161L49 152L39 133L20 122L10 108H76Z"/></svg>
+<div class="texas-service-copy"><span>Serving</span><strong>AUSTIN</strong><span>&amp; Surrounding Areas</span></div>
+</div>
 
       <!-- SEARCH FORM COMPACTO -->
       <div class="mt-5 sm:mt-10 max-w-3xl mx-auto bg-brand-card/95 border border-brand-border shadow-2xl p-2.5 sm:p-3 rounded-xl sm:rounded-2xl backdrop-blur-md">
