@@ -225,8 +225,18 @@
       #home,#services,#gallery,#project-photos,#service-showcase,#contact,#cad-fabrication{scroll-margin-top:140px}
     }
 
+
+    .texas-service-badge{position:absolute;z-index:10;right:clamp(20px,4vw,70px);top:45px;width:230px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));pointer-events:none}
+    .texas-service-badge svg{display:block;width:100%;height:auto}
+    .texas-service-copy{position:absolute;top:36%;left:27%;width:66%;text-align:center;font-family:Montserrat,sans-serif;text-transform:uppercase;color:#fff;font-weight:700}
+    .texas-service-copy span{display:block;font-size:10px;line-height:1.4}
+    .texas-service-copy strong{display:block;color:#ff5e00;font-size:30px;line-height:1.25;font-weight:900}
+    .texas-service-copy span:last-child{font-size:8px}
+    @media(min-width:1100px){#home .hero-main-content{max-width:1000px;margin-left:auto;margin-right:260px}}
+    @media(max-width:1099px){.texas-service-badge{position:relative;top:auto;right:auto;width:135px;margin:-8px 0 12px auto}.texas-service-copy span{font-size:7px}.texas-service-copy strong{font-size:18px}.texas-service-copy span:last-child{font-size:5px}}
+
 </style>
-  <script src="language.js?v=professional-copy-16" defer></script>
+  <script src="language.js?v=texas-badge-17" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
@@ -235,11 +245,7 @@
   <div id="contact-language-bar" class="bg-brand-dark border-b border-brand-border/60 text-xs py-2 px-3 sm:px-8">
     <div class="contact-language-layout max-w-7xl mx-auto">
       <div class="flex items-center space-x-3 sm:space-x-4">
-        <span class="flex items-center text-gray-400">
-          <i class="fa-solid fa-location-dot text-brand-orange mr-1"></i>
-          Serving <strong class="text-white ml-1">Austin & Area</strong>
-        </span>
-        <span class="hidden md:inline-block text-gray-600">|</span>
+
         <span class="hidden md:inline-flex items-center text-gray-300">
           <i class="fa-solid fa-shield-halved text-brand-orange mr-1.5"></i> Residential Improvements • Precise Installations
         </span>
@@ -312,7 +318,11 @@
       <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-[#0D0F12]/85 to-[#0D0F12]/80 backdrop-blur-[1px]"></div>
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto text-center">
+<div class="texas-service-badge" role="img" aria-label="Serving Austin and surrounding areas">
+<svg viewBox="0 0 300 290" aria-hidden="true" focusable="false"><path fill="#252a30" stroke="#717780" stroke-width="1.5" d="M76 12H143V62L155 70L165 68L180 78L190 75L203 83L215 78L232 87L245 83L259 91L275 89L277 124L286 148L282 177L272 192L249 202L229 218L211 226L202 244L201 270L183 264L169 250L159 232L146 224L139 206L124 199L112 180L98 175L87 184L75 180L64 161L49 152L39 133L20 122L10 108H76Z"/></svg>
+<div class="texas-service-copy"><span>Serving</span><strong>AUSTIN</strong><span>&amp; Surrounding Areas</span></div>
+</div>
+    <div class="hero-main-content relative z-10 max-w-5xl mx-auto text-center">
       
       <!-- Badge superior reducido -->
       <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-brand-orange/15 border border-brand-orange/40 text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-6 backdrop-blur-sm">
