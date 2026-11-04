@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Remodeling, painting, landscaping and handyman services in Austin, TX. Explore AutoCAD drafting, SolidWorks modeling and custom 3D printing with KN3X PROJECT LLC.">
-  <title>KN3X PROJECT LLC | Remodeling &amp; Handyman Services in Austin, TX</title>
+  <meta name="description" content="Painting, carpentry, home networks, electrical installations and landscaping in Austin, TX. KN3X brings careful planning and precision to residential projects.">
+  <title>KN3X PROJECT LLC | Residential Improvements in Austin, TX</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -197,8 +197,20 @@
     @media(max-width:639px){.service-showcase{padding:26px 16px 6px}.service-showcase-heading{gap:12px;align-items:center}.service-showcase-intro{font-size:12px}.service-showcase-controls{gap:5px}.service-photo-track{gap:12px}.service-photo-card{flex-basis:85%}.service-photo-card figcaption{padding:13px}.service-photo-card h3{font-size:14px}}
     @media(prefers-reduced-motion:reduce){.service-showcase-controls button{transition:none}}
 
-  </style>
-  <script src="language.js?v=service-photos-6" defer></script>
+  
+    #home,#services,#gallery,#contact,#cad-fabrication{scroll-margin-top:112px}
+    .project-mobile-nav{display:none}
+    #estimateModal{overflow-y:auto}
+    #estimateModal>div{max-height:90dvh;overflow-y:auto}
+    @media(max-width:1023px){
+      .project-mobile-nav{display:flex;align-items:center;justify-content:center;gap:4px;border-top:1px solid #262c38;padding:3px 10px;overflow-x:auto}
+      .project-mobile-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:6px 10px;white-space:nowrap;font-size:12px;font-weight:600;color:#e5e7eb;border-radius:8px}
+      .project-mobile-nav a:hover,.project-mobile-nav a:focus-visible{background:rgba(255,255,255,.07);color:#ff5e00}
+      #home,#services,#gallery,#contact,#cad-fabrication{scroll-margin-top:140px}
+    }
+
+</style>
+  <script src="language.js?v=residential-focus-7" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
@@ -213,7 +225,7 @@
         </span>
         <span class="hidden md:inline-block text-gray-600">|</span>
         <span class="hidden md:inline-flex items-center text-gray-300">
-          <i class="fa-solid fa-shield-halved text-brand-orange mr-1.5"></i> Home Services • Technical Design
+          <i class="fa-solid fa-shield-halved text-brand-orange mr-1.5"></i> Residential Improvements • Precise Installations
         </span>
       </div>
       <div class="contact-language-links">
@@ -246,15 +258,11 @@
 
       <!-- NAVIGATION LINKS -->
       <nav class="header-navigation hidden lg:flex items-center text-sm font-semibold text-gray-300">
-        <a href="#services" class="hover:text-brand-orange transition">Services</a>
-        <a href="#handyman" class="hover:text-brand-orange transition">Handyman</a>
-        <a href="#cad-fabrication" class="hover:text-brand-orange transition flex items-center gap-1.5">
-          <span>Design & 3D Lab</span>
-          <span class="bg-brand-orange/20 text-brand-orange text-[10px] font-black px-1.5 py-0.5 rounded border border-brand-orange/30">VÉRTICE</span>
-        </a>
-        <a href="#gallery" class="hover:text-brand-orange transition">Before & After</a>
-        <a href="#why-us" class="hover:text-brand-orange transition">Why Us</a>
-      </nav>
+<a href="#home" class="hover:text-brand-orange transition">Home</a>
+<a href="#services" class="hover:text-brand-orange transition">Services</a>
+<a href="#gallery" class="hover:text-brand-orange transition">Projects</a>
+<a href="#contact" class="hover:text-brand-orange transition">Contact</a>
+</nav>
 
       <!-- CALL & ESTIMATE BUTTONS (BOTÓN MÁS COMPACTO EN MÓVIL) -->
       <div class="header-actions flex items-center gap-2 sm:gap-4">
@@ -269,10 +277,13 @@
         </button>
       </div>
     </div>
-  </header>
+  <nav class="project-mobile-nav" aria-label="Main navigation">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#gallery">Projects</a><a href="#contact">Contact</a>
+</nav>
+</header>
 
   <!-- HERO SECTION CON FONDO REDUCIDO Y TIPOGRAFÍA COMPACTA EN MÓVIL -->
-  <section class="relative py-8 sm:py-28 px-4 sm:px-8 border-b border-brand-border/40 overflow-hidden bg-[#0D0F12]">
+  <section id="home" class="relative py-8 sm:py-28 px-4 sm:px-8 border-b border-brand-border/40 overflow-hidden bg-[#0D0F12]">
     
     <!-- Imagen de fondo optimizada en móvil para no desbordar verticalmente -->
     <div class="absolute inset-0 z-0">
@@ -294,12 +305,12 @@
 
       <!-- Título con tamaño controlado (text-2xl en móvil, 6xl en PC) -->
       <h1 class="text-2xl sm:text-6xl font-heading font-black text-white tracking-tight leading-tight drop-shadow-lg">
-        WE BUILD <span class="text-brand-orange drop-shadow-[0_2px_10px_rgba(255,94,0,0.5)]">YOUR VISION</span>
+        HOME IMPROVEMENTS <span class="text-brand-orange drop-shadow-[0_2px_10px_rgba(255,94,0,0.5)]">WITH PRECISION</span>
       </h1>
       
       <!-- Párrafo condensado en móvil -->
       <p class="text-xs sm:text-xl text-gray-200 mt-2 sm:mt-4 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow">
-        Remodeling, painting, landscaping and handyman services for your Austin home. We also install smart home systems, security cameras and networks. For technical projects, explore our AutoCAD drafting, SolidWorks modeling and custom 3D printing services.
+        Painting, carpentry, home networks, electrical installations and landscaping in Austin. Planned with care, built around your space and finished with attention to detail.
       </p>
 
       <!-- SEARCH FORM COMPACTO -->
@@ -311,16 +322,12 @@
             <div class="flex items-center px-2 sm:px-3 py-1">
               <i class="fa-solid fa-magnifying-glass text-brand-orange mr-2 text-xs sm:text-sm"></i>
               <select id="hero-service-select" class="w-full bg-transparent text-white font-medium text-xs sm:text-sm focus:outline-none cursor-pointer">
-                <option value="Remodeling" class="bg-brand-card text-white">Remodeling (Kitchen & Bath)</option>
-                <option value="Interior & Exterior Painting" class="bg-brand-card text-white">Interior & Exterior Painting</option>
-                <option value="Carpentry & Custom Woodwork" class="bg-brand-card text-white">Carpentry & Custom Woodwork</option>
-                <option value="Plumbing" class="bg-brand-card text-white">Plumbing Solutions</option>
-                <option value="General Solutions" class="bg-brand-card text-white">General Solutions & Additions</option>
-                <option value="AutoCAD Architectural Plans" class="bg-brand-card text-white">AutoCAD Architectural Plans</option>
-                <option value="SolidWorks 3D Modeling" class="bg-brand-card text-white">SolidWorks 3D Modeling</option>
-                <option value="Custom 3D Printing (Vértice)" class="bg-brand-card text-white">Custom 3D Printing</option>
-                <option value="Smart Home, Networks & Security Cameras" class="bg-brand-card text-white">Networks, Security Cameras & Smart Automation</option>
-              </select>
+<option value="Painting">Interior &amp; Exterior Painting</option>
+<option value="Carpentry">Carpentry &amp; Outdoor Structures</option>
+<option value="Networks">Home Networks &amp; Connectivity</option>
+<option value="Electrical">Residential Electrical Installations</option>
+<option value="Landscaping">Landscaping &amp; Walkways</option>
+</select>
             </div>
           </div>
 
@@ -418,8 +425,8 @@
         <figure>
           <img src="assets/services/service-plumbing.jpg" alt="Worker adjusting the drain connection beneath a kitchen sink." width="960" height="640" loading="lazy" decoding="async">
           <figcaption>
-            <h3>Plumbing</h3>
-            <p>Help with sink connections and everyday plumbing needs.</p>
+            <h3>Installation Details</h3>
+            <p>Attention to the connections and finishing details within a home project.</p>
           </figcaption>
         </figure>
       </article>
@@ -428,311 +435,65 @@
   </section>
 
   <!-- 1. EXPERT HOME SERVICES -->
-  <section id="services" class="py-14 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto">
-    <div class="text-center mb-10 sm:mb-16">
-      <h2 class="text-xs font-bold text-brand-orange tracking-widest uppercase">Services for Your Home</h2>
-      <p class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">From Small Repairs to Full Remodels</p>
-      <div class="w-16 sm:w-20 h-1 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
-    </div>
-
-    <!-- 6 COMPREHENSIVE SERVICE CARDS -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-      
-      <!-- SERVICE 1: REMODELING -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-house-chimney-window"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            Home Remodeling
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Kitchens • Bathrooms • Flooring</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Update your kitchen, bathroom or living space with a coordinated remodel. Services include tile installation, vinyl or hardwood flooring, layout changes and home additions.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('Remodeling')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- SERVICE 2: PAINTING -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-paint-roller"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            Interior & Exterior Painting
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">A Fresh Finish, Inside and Out</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Refresh your home with interior or exterior painting, cabinet refinishing and drywall repairs. We help you achieve a consistent finish suited to your space.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('Interior & Exterior Painting')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- SERVICE 3: CARPENTRY -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-hammer"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            Carpentry & Custom Woodwork
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Custom Details for Your Home</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Make better use of your space with custom built-ins, trim and woodwork. We also work on outdoor decks and cedar pergolas.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('Carpentry & Custom Woodwork')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- SERVICE 4: PLUMBING -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-faucet-drip"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            Plumbing Solutions
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Fixtures, Connections and Repairs</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Tell us about your fixture installation, bathroom upgrade or kitchen plumbing project. We will review the scope and confirm the work required before providing an estimate.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('Plumbing')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- SERVICE 5: GENERAL SOLUTIONS -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 hover:border-brand-orange/60 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group">
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#202530] text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-gears"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            General Solutions
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Practical Help for Everyday Projects</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Keep your property in shape with home maintenance, repairs and landscaping services. For larger projects, ask about planning and remodeling coordination.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('General Solutions')" class="mt-5 sm:mt-6 text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-          Request Quote <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-      <!-- SERVICE 6: SMART HOME, SECURITY CAMERAS, NETWORKS & RACKS -->
-      <div class="bg-brand-card border-2 border-brand-orange/70 rounded-xl p-5 sm:p-6 hover:bg-brand-cardHover transition duration-300 flex flex-col justify-between group relative shadow-lg shadow-brand-orange/10">
-        <span class="absolute -top-3 right-4 bg-brand-orange text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
-          Smart Home & Security
-        </span>
-        <div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 group-hover:scale-110 transition">
-            <i class="fa-solid fa-shield-cat"></i>
-          </div>
-          <h3 class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-brand-orange transition">
-            Smart Home, Networks & Security
-          </h3>
-          <p class="text-xs font-semibold text-brand-orange uppercase mt-1">Connected Homes • Security • Networks</p>
-          <p class="text-xs sm:text-sm text-gray-400 mt-2.5 sm:mt-3 leading-relaxed">
-            Connect your home with automation, security cameras and reliable WiFi coverage. Technical installations include structured cabling, equipment racks and local storage systems tailored to your setup.
-          </p>
-        </div>
-        <button onclick="requestSpecificService('Smart Home, Networks & Security Cameras')" class="mt-5 sm:mt-6 text-xs font-bold text-brand-orange flex items-center gap-1.5 transition">
-          Discuss Your Installation <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
-      </div>
-
-    </div>
-  </section>
+  <section id="services" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+<div class="text-center mb-8"><p class="text-xs font-bold text-brand-orange tracking-widest uppercase">Five Focused Specialties</p>
+<h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Practical Improvements. Precise Installations.</h2>
+<p class="text-sm text-gray-400 mt-3 max-w-2xl mx-auto">Choose the area your project needs. We bring planning and attention to the details that make the finished work fit your home.</p></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
+<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
+<h3 class="font-heading font-bold text-base text-white">Interior &amp; Exterior Painting</h3>
+<p class="text-xs font-semibold text-brand-orange mt-2">A consistent finish for every space</p>
+<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Interior walls, exterior surfaces, cabinet refinishing and drywall preparation. A focused approach to refreshing and protecting your home.</p>
+<button type="button" onclick="requestSpecificService('Painting')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Discuss This Service <span aria-hidden="true">↗</span></button>
+</article>
+<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
+<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
+<h3 class="font-heading font-bold text-base text-white">Carpentry &amp; Outdoor Structures</h3>
+<p class="text-xs font-semibold text-brand-orange mt-2">Built around your space</p>
+<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Custom shelving, trim, woodwork and pergolas. We plan the dimensions and installation details to suit your home.</p>
+<button type="button" onclick="requestSpecificService('Carpentry')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Discuss This Service <span aria-hidden="true">↗</span></button>
+</article>
+<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
+<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+<h3 class="font-heading font-bold text-base text-white">Home Networks &amp; Connectivity</h3>
+<p class="text-xs font-semibold text-brand-orange mt-2">Organized. Connected. Practical.</p>
+<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Ethernet cabling, WiFi coverage and equipment organization for home offices and connected homes. Routes and mounting details are planned before installation.</p>
+<button type="button" onclick="requestSpecificService('Networks')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Discuss This Service <span aria-hidden="true">↗</span></button>
+</article>
+<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
+<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+<h3 class="font-heading font-bold text-base text-white">Residential Electrical Installations</h3>
+<p class="text-xs font-semibold text-brand-orange mt-2">Details that support everyday living</p>
+<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Lighting, switches, outlets and related installation work. We review the project scope and requirements before confirming the work.</p>
+<button type="button" onclick="requestSpecificService('Electrical')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Discuss This Service <span aria-hidden="true">↗</span></button>
+</article>
+<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
+<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+<h3 class="font-heading font-bold text-base text-white">Landscaping &amp; Walkways</h3>
+<p class="text-xs font-semibold text-brand-orange mt-2">Outdoor spaces with purpose</p>
+<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Garden improvements, concrete and stone walkways, and outdoor layouts that connect your home with the space around it.</p>
+<button type="button" onclick="requestSpecificService('Landscaping')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Discuss This Service <span aria-hidden="true">↗</span></button>
+</article>
+</div></section>
 
   
-  <section id="handyman" class="py-12 sm:py-16 px-4 sm:px-8 bg-brand-dark border-y border-brand-border">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div>
-        <p class="text-xs font-bold text-brand-orange uppercase tracking-widest">Small Jobs. Practical Solutions.</p>
-        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Handyman &amp; Furniture Assembly</h2>
-        <p class="text-sm text-gray-300 mt-4 leading-relaxed">Need a desk assembled, shelves installed or a small repair completed? Describe the job, share your availability and leave your contact details. We will review your request and reply with the next steps.</p>
-        <ul class="text-sm text-gray-300 mt-5 space-y-3">
-          <li>• Furniture assembly: desks, beds and dressers</li>
-          <li>• Installation of shelves, curtain rods and wall accessories</li>
-          <li>• Small repairs and routine home maintenance</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-5">Serving Austin and nearby communities. We will confirm availability, pricing and the appointment details with you before scheduling.</p>
-      </div>
-      <form id="handymanForm" onsubmit="submitHandymanRequest(event)" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
-        <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div><label for="handymanPhone" class="block text-sm mb-1">Phone (optional)</label><input type="tel" id="handymanPhone" name="phone" autocomplete="tel" maxlength="40" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-          <div><label for="handymanZip" class="block text-sm mb-1">ZIP code</label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        </div>
-        <div><label for="handymanJob" class="block text-sm mb-1">What do you need done?</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Assemble an IKEA desk and install two shelves. Include the model, quantity and any useful details." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
-        <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Prepare My Service Request</button>
-        <p class="text-xs text-gray-400">Your email app will open with the request ready to review. Press Send to contact KN3X. We will reply to discuss the schedule and estimated cost. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
-        <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
-      </form>
-    </div>
-  </section>
+  
 
   <!-- 2. ARCHITECTURAL CAD, SOLIDWORKS & 3D PRINTING SECTION -->
-  <section id="cad-fabrication" class="py-14 sm:py-20 px-4 sm:px-8 bg-[#0D1017] border-y border-brand-border relative overflow-hidden">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/15 border border-brand-orange/30 text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-3">
-            <i class="fa-solid fa-microchip"></i> Technical Design &amp; Fabrication
-          </div>
-          <h2 class="text-2xl sm:text-5xl font-heading font-black text-white">
-            AutoCAD · SolidWorks · <span class="text-brand-orange">Custom 3D Printing</span>
-          </h2>
-        </div>
-        <p class="text-gray-400 text-xs sm:text-sm max-w-lg mt-3 lg:mt-0 leading-relaxed">
-          Turn an idea, measurement or digital model into a clear technical deliverable. Our services cover CAD drawings, 3D product modeling and printed functional parts through Vértice 3D.
-        </p>
-      </div>
-
-      <!-- 3 LAB CARDS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
-        
-        <!-- CARD 1: AUTOCAD -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-5 sm:p-7 hover:border-brand-orange/60 transition group relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -right-6 -bottom-6 text-neutral-800/40 text-8xl font-black select-none pointer-events-none group-hover:text-brand-orange/10 transition">
-            <i class="fa-solid fa-compass-drafting"></i>
-          </div>
-          <div>
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-800 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-neutral-700">
-              <i class="fa-solid fa-ruler-combined"></i>
-            </div>
-            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
-              AutoCAD Architectural Plans
-            </h3>
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Architectural Drafting</p>
-            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Existing-condition measurements, floor plans and elevations.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Layout planning for kitchens, bathrooms and home additions.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Drawing preparation to support permit applications, subject to project requirements and city review.</span>
-              </li>
-            </ul>
-          </div>
-          <button onclick="requestSpecificService('AutoCAD Architectural Plans')" class="mt-6 sm:mt-8 text-xs font-bold text-brand-orange flex items-center gap-2 group-hover:translate-x-1 transition">
-            Discuss My Drawings <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-
-        <!-- CARD 2: SOLIDWORKS -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-5 sm:p-7 hover:border-brand-orange/60 transition group relative overflow-hidden flex flex-col justify-between">
-          <div class="absolute -right-6 -bottom-6 text-neutral-800/40 text-8xl font-black select-none pointer-events-none group-hover:text-brand-orange/10 transition">
-            <i class="fa-solid fa-cube"></i>
-          </div>
-          <div>
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-800 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-neutral-700">
-              <i class="fa-solid fa-cubes-stacked"></i>
-            </div>
-            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
-              SolidWorks 3D Modeling
-            </h3>
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Product &amp; Mechanical Design</p>
-            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Parametric 3D models for parts, brackets and enclosures.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Fit and tolerance considerations for moving or interlocking parts.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>STEP and IGES exports for the next stage of fabrication.</span>
-              </li>
-            </ul>
-          </div>
-          <button onclick="requestSpecificService('SolidWorks 3D Modeling')" class="mt-6 sm:mt-8 text-xs font-bold text-brand-orange flex items-center gap-2 group-hover:translate-x-1 transition">
-            Discuss My 3D Model <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-
-        <!-- CARD 3: 3D PRINTING & VÉRTICE LAB -->
-        <div class="bg-gradient-to-b from-brand-card to-[#1E232F] border-2 border-brand-orange/70 rounded-2xl p-5 sm:p-7 hover:border-brand-orange transition group relative overflow-hidden flex flex-col justify-between shadow-xl shadow-brand-orange/10">
-          <span class="absolute top-4 right-4 bg-brand-orange text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
-            In-House Lab
-          </span>
-          <div>
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 border border-brand-orange/40">
-              <i class="fa-solid fa-layer-group"></i>
-            </div>
-            <h3 class="font-heading font-black text-lg sm:text-xl text-white group-hover:text-brand-orange transition">
-              Custom 3D Printing
-            </h3>
-            <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mt-1">Powered by Vértice 3D</p>
-            <ul class="text-xs sm:text-sm text-gray-300 mt-3 sm:mt-4 space-y-2 sm:space-y-2.5">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>FDM printing in PLA, PETG or TPU, selected for the intended use.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Custom holders, cable guides, accessories and functional parts.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-brand-orange text-xs mt-0.5"></i>
-                <span>Prototype iterations and small production runs.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-brand-border/80 flex items-center justify-between">
-            <button onclick="requestSpecificService('Custom 3D Printing (Vértice)')" class="text-xs font-bold text-white group-hover:text-brand-orange flex items-center gap-1.5 transition">
-              Request a Print Estimate <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </button>
-            <a href="https://vertice-3d.knuth.me" target="_blank" class="text-[10px] sm:text-[11px] font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/30 px-2 sm:px-2.5 py-1 rounded hover:bg-brand-orange hover:text-white transition">
-              Visit Vértice 3D ↗
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- VÉRTICE LAB BANNER -->
-      <div class="bg-brand-card border border-brand-border rounded-xl p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
-        <div class="flex items-center gap-3 sm:gap-4">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-brand-orange text-xl sm:text-2xl flex-shrink-0">
-            <i class="fa-solid fa-cube"></i>
-          </div>
-          <div>
-            <h4 class="font-heading font-black text-white text-sm sm:text-base">Have a 3D File or an Idea for a Custom Part?</h4>
-            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5">Tell us what the part needs to do. We can review your model or discuss a design based on your requirements.</p>
-          </div>
-        </div>
-        <button onclick="requestSpecificService('Custom 3D Printing (Vértice)')" class="w-full md:w-auto bg-neutral-800 hover:bg-brand-orange text-white font-bold text-xs px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-neutral-700 hover:border-brand-orange transition whitespace-nowrap text-center">
-          Discuss My Project
-        </button>
-      </div>
-
-    </div>
-  </section>
+  <section id="cad-fabrication" class="py-10 sm:py-12 px-4 sm:px-8 bg-[#0D1017] border-y border-brand-border">
+<div class="max-w-7xl mx-auto">
+<p class="text-xs text-brand-orange font-bold uppercase tracking-widest">Planning Behind the Work</p>
+<h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">We Design the Details Your Project Needs</h2>
+<p class="text-sm text-gray-300 mt-3 max-w-3xl leading-relaxed">Technical tools support our residential work when a project calls for precise dimensions, coordinated installation routes or a custom part.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
+<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Plan the Layout</h3><p class="text-sm text-gray-400 mt-2">AutoCAD helps us document dimensions, layouts and installation routes before work begins.</p></div>
+<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Solve the Fit</h3><p class="text-sm text-gray-400 mt-2">SolidWorks supports the design of brackets, connectors and mounting details when standard parts do not fit the project.</p></div>
+<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Make the Right Part</h3><p class="text-sm text-gray-400 mt-2">3D printing lets us test a fit or create a custom accessory that completes an installation.</p></div>
+</div>
+<p class="text-xs text-gray-400 mt-6">For example: a network installation can include a planned cable route, a fitted equipment bracket and a custom cable guide.</p>
+<a href="https://vertice-3d.knuth.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-brand-orange mt-4 min-h-[44px] hover:text-white">Looking for standalone 3D printing? Visit Vértice 3D <span aria-hidden="true">↗</span></a>
+</div></section>
 
   <!-- 3. BEFORE & AFTER SECTION -->
   <section id="gallery" class="py-14 sm:py-20 bg-[#0E1116] border-b border-brand-border">
@@ -741,7 +502,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
         <div>
           <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Real Results in Texas</span>
-          <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">Before & After Showcase</h2>
+          <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">Projects &amp; Transformations</h2>
         </div>
         <p class="text-gray-400 text-xs sm:text-sm max-w-md mt-2 md:mt-0">
           Drag the divider to compare the space before and after the remodel.
@@ -811,29 +572,36 @@
     <h2 class="text-2xl sm:text-4xl font-heading font-black text-white text-center">Why Choose KN3X?</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
       <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Local to Austin</h3><p class="text-sm text-gray-300 mt-2">Serving Austin and surrounding communities.</p></div>
-      <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Home Projects. Technical Expertise.</h3><p class="text-sm text-gray-300 mt-2">Choose practical home services or dedicated technical design support to suit your project.</p></div>
+      <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Home Projects. Technical Expertise.</h3><p class="text-sm text-gray-300 mt-2">Five residential specialties, supported by planning, precise measurements and custom solutions when your project needs them.</p></div>
       <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Clear Next Steps</h3><p class="text-sm text-gray-300 mt-2">Share your goals, location and preferred timing so we can discuss the scope and prepare an estimate.</p></div>
     </div>
   </section>
 
   <!-- CALL TO ACTION (CTA) BANNER -->
-  <section class="py-12 sm:py-16 px-4 sm:px-8 bg-gradient-to-r from-brand-orangeDark via-brand-orange to-[#ff7a29] text-white">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
-      <div>
-        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-wider bg-black/20 px-2.5 sm:px-3 py-1 rounded-full">Let's Plan Your Project</span>
-        <h2 class="text-2xl sm:text-4xl font-heading font-black mt-2">Ready to transform your home?</h2>
-        <p class="text-white/90 text-xs sm:text-sm mt-1 max-w-xl">
-          Call to discuss your project in Austin or the surrounding area. We will review your needs and explain the next steps for an estimate.
-        </p>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="tel:5124504988" class="bg-black hover:bg-neutral-900 text-white font-heading font-black text-base sm:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl transition shadow-xl flex items-center gap-2.5 sm:gap-3">
-          <i class="fa-solid fa-phone text-brand-orange text-sm"></i>
-          <span>(512) 450-4988</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <section id="contact" class="py-12 sm:py-16 px-4 sm:px-8 bg-brand-dark border-t border-brand-border"><span id="handyman" aria-hidden="true"></span>
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div><p class="text-xs font-bold text-brand-orange uppercase tracking-widest">Start Your Home Project</p>
+<h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Tell Us What You Want to Improve</h2>
+<p class="text-sm text-gray-300 mt-4 leading-relaxed">Choose a specialty, describe the work and share your preferred timing. We will review the scope and contact you to discuss availability and an estimate.</p>
+<p class="text-xs text-gray-400 mt-4">Serving Austin and nearby communities. Appointment details and pricing are confirmed before scheduling.</p>
+<a href="tel:5124504988" class="inline-flex items-center gap-2 mt-5 text-brand-orange font-bold min-h-[44px]"><i class="fa-solid fa-phone" aria-hidden="true"></i> (512) 450-4988</a>
+</div><form id="handymanForm" onsubmit="submitHandymanRequest(event)" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
+        <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div><label for="handymanPhone" class="block text-sm mb-1">Phone (optional)</label><input type="tel" id="handymanPhone" name="phone" autocomplete="tel" maxlength="40" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+          <div><label for="handymanZip" class="block text-sm mb-1">ZIP code</label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        </div>
+        <div><label for="projectService" class="block text-sm mb-1">Project Area</label><select id="projectService" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base text-white" required><option value="Painting">Interior &amp; Exterior Painting</option>
+<option value="Carpentry">Carpentry &amp; Outdoor Structures</option>
+<option value="Networks">Home Networks &amp; Connectivity</option>
+<option value="Electrical">Residential Electrical Installations</option>
+<option value="Landscaping">Landscaping &amp; Walkways</option></select></div><div><label for="handymanJob" class="block text-sm mb-1">Tell Us About the Work</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Paint two rooms, build a pergola or install Ethernet in a home office. Include the location and approximate scope." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
+        <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Prepare My Service Request</button>
+        <p class="text-xs text-gray-400">Your email app will open with the request ready to review. Press Send to contact KN3X. We will reply to discuss the schedule and estimated cost. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
+        <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
+      </form></div></section>
 
   <!-- FOOTER -->
   <footer class="bg-brand-dark border-t border-brand-border pt-12 sm:pt-16 pb-8 px-4 sm:px-8 text-gray-400 text-sm">
@@ -845,7 +613,7 @@
           <img src="logo.PNG" alt="KN3X PROJECT LLC" class="h-10 sm:h-16 w-auto object-contain">
         </div>
         <p class="text-xs text-gray-400 max-w-md leading-relaxed">
-          KN3X PROJECT LLC serves Austin with remodeling, painting, landscaping and handyman services. Our technical services include AutoCAD drafting, SolidWorks modeling, custom 3D printing and connected-home installations.
+          Residential improvements in Austin, focused on painting, carpentry, networks, electrical installations and landscaping. Technical planning and custom fabrication support the work when needed.
         </p>
         <div class="mt-3 sm:mt-4 flex items-center gap-2 text-xs text-gray-300 font-semibold">
           <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500"></span> Tell Us About Your Next Project
@@ -855,15 +623,7 @@
       <!-- Col 2: Capabilities -->
       <div>
         <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-2.5 sm:mb-3">Capabilities</h4>
-        <ul class="space-y-1.5 sm:space-y-2 text-xs">
-          <li><a href="#handyman" class="hover:text-brand-orange">Handyman & Furniture Assembly</a></li>
-          <li><a href="#services" class="hover:text-brand-orange">Kitchen & Bath Remodels</a></li>
-          <li><a href="#cad-fabrication" class="hover:text-brand-orange">AutoCAD Drafting</a></li>
-          <li><a href="#cad-fabrication" class="hover:text-brand-orange">SolidWorks 3D Modeling</a></li>
-          <li><a href="#cad-fabrication" class="hover:text-brand-orange text-brand-orange font-bold">Vértice 3D Printing Lab</a></li>
-          <li><a href="#services" class="hover:text-brand-orange">Smart Automation & Cameras</a></li>
-          <li><a href="#services" class="hover:text-brand-orange">WiFi Networks & Server Racks</a></li>
-        </ul>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs"><li><a href="#services" class="hover:text-brand-orange">Interior &amp; Exterior Painting</a></li><li><a href="#services" class="hover:text-brand-orange">Carpentry &amp; Outdoor Structures</a></li><li><a href="#services" class="hover:text-brand-orange">Home Networks &amp; Connectivity</a></li><li><a href="#services" class="hover:text-brand-orange">Residential Electrical Installations</a></li><li><a href="#services" class="hover:text-brand-orange">Landscaping &amp; Walkways</a></li><li><a href="#cad-fabrication" class="hover:text-brand-orange">Our Planning Approach</a></li></ul>
       </div>
 
       <!-- Col 3: Contact Details -->
@@ -919,20 +679,16 @@
         <div>
           <label for="modalService" class="block text-xs font-semibold text-gray-300 mb-1">Select Service</label>
           <select id="modalService" name="service" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
-            <option value="Remodeling">Remodeling (Kitchens, Bathrooms, Additions)</option>
-            <option value="Interior & Exterior Painting">Interior & Exterior Painting</option>
-            <option value="Carpentry & Custom Woodwork">Carpentry & Custom Woodwork</option>
-            <option value="Plumbing">Plumbing Solutions</option>
-            <option value="General Solutions">General Solutions / Maintenance</option>
-            <option value="AutoCAD Architectural Plans">AutoCAD Architectural Drafting & Plans</option>
-            <option value="SolidWorks 3D Modeling">SolidWorks 3D Parts & Mechanical Design</option>
-            <option value="Custom 3D Printing (Vértice)">Custom 3D Printing Lab (Vértice 3D)</option>
-            <option value="Smart Home, Networks & Security Cameras">Smart Home Automation, Security Cameras & Networks</option>
-          </select>
+<option value="Painting">Interior &amp; Exterior Painting</option>
+<option value="Carpentry">Carpentry &amp; Outdoor Structures</option>
+<option value="Networks">Home Networks &amp; Connectivity</option>
+<option value="Electrical">Residential Electrical Installations</option>
+<option value="Landscaping">Landscaping &amp; Walkways</option>
+</select>
         </div>
         <div>
           <label for="estimateDetails" class="block text-xs font-semibold text-gray-300 mb-1">Project Description (Optional)</label>
-          <textarea id="estimateDetails" name="details" maxlength="2000" rows="3" placeholder="Briefly describe what you're looking to design, build, automate or install..." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea>
+          <textarea id="estimateDetails" name="details" maxlength="2000" rows="3" placeholder="Describe your project, the space involved and what you would like to improve." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea>
         </div>
         <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-heading font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-lg transition shadow-lg mt-2">
           Prepare My Email Request
@@ -1016,15 +772,16 @@
         return;
       }
       const body = [
-        window.KNLanguage.t('HANDYMAN SERVICE REQUEST'), '',
+        window.KNLanguage.t('HOME PROJECT REQUEST'), '',
         window.KNLanguage.t('Name: ') + name, window.KNLanguage.t('Reply email: ') + email,
+        window.KNLanguage.t('Service: ') + document.getElementById('projectService').selectedOptions[0].textContent,
         window.KNLanguage.t('Phone: ') + (value('handymanPhone') || window.KNLanguage.t('Not provided')),
         window.KNLanguage.t('ZIP: ') + value('handymanZip'),
         window.KNLanguage.t('Preferred days/times: ') + (value('handymanAvailability') || window.KNLanguage.t('Flexible')),
         '', window.KNLanguage.t('Work requested:'), job, '',
         window.KNLanguage.t('Please reply with the proposed day, time and estimated cost.')
       ].join('\n');
-      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent(window.KNLanguage.t('Handyman request — ') + name) + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:kn3x.project@gmail.com?subject=' + encodeURIComponent(window.KNLanguage.t('Home project request — ') + name) + '&body=' + encodeURIComponent(body);
       window.KNLanguage.status('handymanStatus', 'Review and send the message in your email app. This website has not sent your request automatically.');
     }
 
