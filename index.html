@@ -103,7 +103,8 @@
       #contact-language-bar [data-language-control] { width:auto; justify-content:flex-end; }
       #contact-language-bar .top-contact-email,
       #contact-language-bar .top-contact-social { display:none; }
-      .mobile-hero-contact { display:flex; flex-direction:column; align-items:center; gap:0; }
+      .mobile-hero-contact { display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center; justify-content:center; gap:clamp(8px,3vw,16px); margin-top:8px; font-size:clamp(10px,2.8vw,12px); }
+      .mobile-hero-contact a { flex-shrink:0; gap:4px; white-space:nowrap; }
     }
   
     .site-header-row { gap:16px; }
