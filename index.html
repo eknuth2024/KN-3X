@@ -226,7 +226,7 @@
     }
 
 </style>
-  <script src="language.js?v=direct-post-11" defer></script>
+  <script src="language.js?v=formspree-12" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
@@ -618,11 +618,10 @@
 <p class="text-sm text-gray-300 mt-4 leading-relaxed">Choose a specialty, describe the work and share your preferred timing. We will review the scope and contact you to discuss availability and an estimate.</p>
 <p class="text-xs text-gray-400 mt-4">Serving Austin and nearby communities. Appointment details and pricing are confirmed before scheduling.</p>
 <a href="tel:5124504988" class="inline-flex items-center gap-2 mt-5 text-brand-orange font-bold min-h-[44px]"><i class="fa-solid fa-phone" aria-hidden="true"></i> (512) 450-4988</a>
-</div><form id="handymanForm" action="https://formsubmit.co/kn3x.project@gmail.com" method="POST" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
-<input type="hidden" name="_subject" value="KN3X — New service request">
-<input type="hidden" name="_template" value="table">
+</div><form id="handymanForm" action="https://formspree.io/f/meaavkwo" method="POST" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
+<input type="hidden" name="subject" value="KN3X — New service request">
 <input type="hidden" name="Language" value="en">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -639,7 +638,7 @@
 </select></div><div><label for="handymanJob" class="block text-sm mb-1">Tell Us About the Work</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Paint two rooms, build a pergola or install Ethernet in a home office. Include the location and approximate scope." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
         <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Send Service Request</button>
-        <p class="text-xs text-gray-400">After you submit, FormSubmit will open to verify and process your request. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
+        <p class="text-xs text-gray-400">After you submit, Formspree will open to verify and process your request. Prefer to call? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
         <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
       </form></div></section>
 
@@ -701,11 +700,10 @@
         <p class="text-xs text-gray-400 mt-1">Share a few details to help us understand what you need.</p>
       </div>
 
-      <form id="estimateForm" action="https://formsubmit.co/kn3x.project@gmail.com" method="POST" class="space-y-3.5 sm:space-y-4">
-<input type="hidden" name="_subject" value="KN3X — New service request">
-<input type="hidden" name="_template" value="table">
+      <form id="estimateForm" action="https://formspree.io/f/meaavkwo" method="POST" class="space-y-3.5 sm:space-y-4">
+<input type="hidden" name="subject" value="KN3X — New service request">
 <input type="hidden" name="Language" value="en">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div>
           <label for="estimateName" class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
           <input type="text" id="estimateName" name="name" autocomplete="name" maxlength="100" required placeholder="John Doe" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
@@ -738,7 +736,7 @@
         <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-heading font-bold text-xs sm:text-sm py-2.5 sm:py-3 rounded-lg transition shadow-lg mt-2">
           Send Estimate Request
         </button>
-        <p class="text-xs text-gray-400">After you submit, FormSubmit will open to verify and process your request.</p>
+        <p class="text-xs text-gray-400">After you submit, Formspree will open to verify and process your request.</p>
         <p id="estimateStatus" data-language-status="" role="status" class="text-xs text-brand-orange"></p>
       </form>
     </div>
@@ -807,7 +805,7 @@
 
 
 
-    // Native POST lets FormSubmit handle verification and confirmation.
+    // Native POST lets Formspree handle verification and confirmation.
     ['handymanForm', 'estimateForm'].forEach(id => {
       document.getElementById(id).addEventListener('submit', event => {
         event.currentTarget.elements.namedItem('Language').value = document.documentElement.lang;
