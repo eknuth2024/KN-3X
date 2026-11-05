@@ -2,19 +2,12 @@
 <html lang="en">
 <head>
   <script>
-    // Refresh starts at the top; direct section links and back navigation still work.
-    (() => {
-      const navigation = performance.getEntriesByType('navigation')[0];
-      if (!navigation || navigation.type !== 'reload') return;
-      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-      if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
-      const resetScroll = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      window.addEventListener('pageshow', () => {
-        resetScroll();
-        if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
-      }, { once: true });
-    })();
-  </script>
+(() => {
+ const routes = {'#services':'services.html','#service-showcase':'services.html','#cad-fabrication':'services.html#cad-fabrication','#gallery':'services.html#gallery','#project-photos':'photo-gallery.html','#contact':'contact.html','#why-us':'index.html#why-us'};
+ const target = routes[location.hash];
+ if (target && !target.startsWith('index.html')) location.replace(target);
+})();
+</script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -257,9 +250,11 @@
 @media(max-width:900px){.project-album-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:639px){.project-album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-photo figcaption{font-size:10px;padding:8px;gap:4px}#project-photo-large{height:60dvh}}
 
+.header-navigation a[aria-current="page"],.project-mobile-nav a[aria-current="page"]{color:#ff5e00;background:rgba(255,255,255,.06)}
 </style>
-  <script src="language.js?v=project-album-19" defer></script>
-  <script src="service-carousel.js?v=1" defer></script>
+  <script src="language.js?v=multipage-20" defer></script>
+  
+<link rel="canonical" href="https://kn3x.knuth.me/">
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
 
@@ -296,16 +291,16 @@
     <div class="site-header-row max-w-7xl mx-auto px-4 sm:px-8 h-20 sm:h-24 flex items-center justify-between">
       
       <!-- LOGO KN3X PROJECT (h-10 en móvil, h-20 en pantallas grandes) -->
-      <a href="#" class="header-brand flex items-center py-1">
+      <a href="index.html" class="header-brand flex items-center py-1">
         <img src="logo.PNG" alt="KN3X PROJECT LLC" class="h-14 sm:h-20 w-auto max-w-[180px] sm:max-w-none object-contain">
       </a>
 
       <!-- NAVIGATION LINKS -->
       <nav class="header-navigation hidden lg:flex items-center text-sm font-semibold text-gray-300">
-<a href="#home" class="hover:text-brand-orange transition">Home</a>
-<a href="#services" class="hover:text-brand-orange transition">Services</a>
-<a href="#gallery" class="hover:text-brand-orange transition">Projects</a>
-<a href="#project-photos" class="hover:text-brand-orange transition">Photo Gallery</a><a href="#contact" class="hover:text-brand-orange transition">Contact</a>
+<a href="index.html" aria-current="page" class="hover:text-brand-orange transition">Home</a>
+<a href="services.html" class="hover:text-brand-orange transition">Services</a>
+
+<a href="photo-gallery.html" class="hover:text-brand-orange transition">Photo Gallery</a><a href="contact.html" class="hover:text-brand-orange transition">Contact</a>
 </nav>
 
       <!-- CALL & ESTIMATE BUTTONS (BOTÓN MÁS COMPACTO EN MÓVIL) -->
@@ -322,12 +317,12 @@
       </div>
     </div>
   <nav class="project-mobile-nav" aria-label="Main navigation">
-<a href="#home">Home</a><a href="#services">Services</a><a href="#gallery">Projects</a><a href="#project-photos">Photo Gallery</a><a href="#contact">Contact</a>
+<a href="index.html" aria-current="page">Home</a><a href="services.html">Services</a><a href="photo-gallery.html">Photo Gallery</a><a href="contact.html">Contact</a>
 </nav>
 </header>
 
-  <!-- HERO SECTION CON FONDO REDUCIDO Y TIPOGRAFÍA COMPACTA EN MÓVIL -->
-  <section id="home" class="relative py-8 sm:py-28 px-4 sm:px-8 border-b border-brand-border/40 overflow-hidden bg-[#0D0F12]">
+  <main id="main-content">
+<section id="home" class="relative py-8 sm:py-28 px-4 sm:px-8 border-b border-brand-border/40 overflow-hidden bg-[#0D0F12]">
     
     <!-- Imagen de fondo optimizada en móvil para no desbordar verticalmente -->
     <div class="absolute inset-0 z-0">
@@ -419,223 +414,7 @@
       </div>
 
     </div>
-  </section>
-
-  
-  <!-- Service photo carousel -->
-  <section id="service-showcase" class="service-showcase" aria-labelledby="service-showcase-title">
-    <div class="service-showcase-heading">
-      <div>
-        <p class="service-showcase-eyebrow">Ideas for Your Home</p>
-        <h2 id="service-showcase-title">Explore Our Services</h2>
-        <p class="service-showcase-intro">Discover ways to refresh your interiors, improve your outdoor spaces and make everyday living more comfortable.</p>
-      </div>
-      <div class="service-showcase-controls" aria-label="Service photo controls">
-        <button type="button" id="service-previous" aria-label="Previous service photos" aria-controls="service-photo-track" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-        <button type="button" id="service-next" aria-label="Next service photos" aria-controls="service-photo-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
-      </div>
-    </div>
-    <div id="service-photo-track" class="service-photo-track" tabindex="0" role="region" aria-label="Service photo carousel">
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-painting.jpg" alt="Painter applying a fresh coat to a living room wall with furniture and floors protected." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Interior &amp; Exterior Painting</h3>
-            <p>Careful preparation and fresh finishes for your home.</p>
-          </figcaption>
-        </figure>
-      </article>
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-landscaping.jpg" alt="Worker positioning concrete slabs on a residential walkway." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Landscaping & Walkways</h3>
-            <p>Concrete and stone paths for outdoor spaces.</p>
-          </figcaption>
-        </figure>
-      </article>
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-plumbing.jpg" alt="Worker adjusting the drain connection beneath a kitchen sink." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Plumbing</h3>
-            <p>Sink connections and plumbing details for your home.</p>
-          </figcaption>
-        </figure>
-      </article>
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-carpentry.jpg" alt="Carpenter measuring a cedar beam for a pergola." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Carpentry & Pergolas</h3>
-            <p>Custom woodwork for your outdoor living space.</p>
-          </figcaption>
-        </figure>
-      </article>
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-electrical.jpg" alt="Technician installing a wall light switch." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Electrical Installations</h3>
-            <p>Practical upgrades for your home's switches and fixtures.</p>
-          </figcaption>
-        </figure>
-      </article>
-<article class="service-photo-card">
-        <figure>
-          <img src="assets/services/service-networks.jpg" alt="Technician connecting Ethernet cabling in a home office." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Network &amp; Internet Installation</h3>
-            <p>Organized connections for work and everyday life.</p>
-          </figcaption>
-        </figure>
-      </article>
-    </div>
-    <p class="service-showcase-hint">Swipe or use the arrows to explore.</p>
-  </section>
-
-  <!-- 1. EXPERT HOME SERVICES -->
-  <section id="services" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
-<div class="text-center mb-8"><p class="text-xs font-bold text-brand-orange tracking-widest uppercase">Six Specialties for Your Home</p>
-<h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Thoughtful Improvements for the Way You Live</h2>
-<p class="text-sm text-gray-400 mt-3 max-w-2xl mx-auto">Choose the service your space needs. We listen to your ideas, review the scope and plan the details with you before work begins.</p></div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Interior &amp; Exterior Painting</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">A Fresh Look, Inside and Out</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Refresh your walls, exterior surfaces and cabinets with careful preparation and finishes suited to your space. We also prepare drywall for painting.</p>
-<button type="button" onclick="requestSpecificService('Painting')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Landscaping &amp; Walkways</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Make More of Your Outdoor Space</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Bring your outdoor ideas together with garden improvements, concrete or stone walkways and layouts that make your yard more inviting and practical.</p>
-<button type="button" onclick="requestSpecificService('Landscaping')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Plumbing</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Practical Solutions for Everyday Use</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Update sinks, replace fixtures and address related plumbing needs. We review the existing installation and project requirements before agreeing on the work.</p>
-<button type="button" onclick="requestSpecificService('Plumbing')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Carpentry &amp; Outdoor Structures</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Woodwork That Fits Your Home</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Add function and character with custom shelving, trim, woodwork and pergolas. Dimensions, materials and installation details are planned around your space.</p>
-<button type="button" onclick="requestSpecificService('Carpentry')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Residential Electrical Installations</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Lighting and Connections That Work for You</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Improve everyday comfort with lighting, switches, outlets and related installations. We review the scope and installation requirements before confirming your project.</p>
-<button type="button" onclick="requestSpecificService('Electrical')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Network &amp; Internet Installation</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">A Better-Connected Home</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Connect your home office and everyday devices with Ethernet cabling, WiFi coverage improvements and organized equipment. We plan cable routes and mounting details before installation.</p>
-<button type="button" onclick="requestSpecificService('Networks')" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">Request an Estimate <span aria-hidden="true">↗</span></button>
-</article>
-</div></section>
-
-  
-  
-
-  <!-- 2. ARCHITECTURAL CAD, SOLIDWORKS & 3D PRINTING SECTION -->
-  <section id="cad-fabrication" class="py-10 sm:py-12 px-4 sm:px-8 bg-[#0D1017] border-y border-brand-border">
-<div class="max-w-7xl mx-auto">
-<p class="text-xs text-brand-orange font-bold uppercase tracking-widest">Precision Behind Every Detail</p>
-<h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">Better Planning. Solutions That Fit.</h2>
-<p class="text-sm text-gray-300 mt-3 max-w-3xl leading-relaxed">Some projects need more than a standard solution. When useful, we use technical drawings, 3D design and custom parts to plan the work and resolve installation details.</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
-<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Plan the Layout</h3><p class="text-sm text-gray-400 mt-2">AutoCAD helps us document dimensions, layouts and installation routes before work begins.</p></div>
-<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Solve the Fit</h3><p class="text-sm text-gray-400 mt-2">SolidWorks supports the design of brackets, connectors and mounting details when standard parts do not fit the project.</p></div>
-<div class="border-l-2 border-brand-orange/60 pl-4"><h3 class="font-bold text-white text-sm">Make the Right Part</h3><p class="text-sm text-gray-400 mt-2">3D printing lets us test a fit or create a custom accessory that completes an installation.</p></div>
-</div>
-<p class="text-xs text-gray-400 mt-6">For example: a network installation can include a planned cable route, a fitted equipment bracket and a custom cable guide.</p>
-<a href="https://vertice-3d.knuth.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-brand-orange mt-4 min-h-[44px] hover:text-white">Looking for standalone 3D printing? Visit Vértice 3D <span aria-hidden="true">↗</span></a>
-</div></section>
-
-  <!-- 3. BEFORE & AFTER SECTION -->
-  <section id="gallery" class="py-14 sm:py-20 bg-[#0E1116] border-b border-brand-border">
-    <div class="max-w-6xl mx-auto px-4 sm:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
-        <div>
-          <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Explore the Possibilities</span>
-          <h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-1">Spaces with New Possibilities</h2>
-        </div>
-        <p class="text-gray-400 text-xs sm:text-sm max-w-md mt-2 md:mt-0">
-          Move the divider to explore the before-and-after view.
-        </p>
-      </div>
-
-      <!-- BEFORE & AFTER COMPARISON SLIDER -->
-      <div class="compare-container rounded-2xl border border-brand-border shadow-2xl h-[320px] sm:h-[540px] max-w-4xl mx-auto relative overflow-hidden" id="compareContainer">
-        
-        <!-- AFTER IMAGE -->
-        <img 
-          src="AFTER.jpg" 
-          alt="KN3X Remodel After" 
-          class="w-full h-full object-cover select-none pointer-events-none"
-          onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop'"
-        >
-        <span class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-brand-orange text-white text-[10px] sm:text-xs font-heading font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg z-10 shadow">
-          AFTER
-        </span>
-
-        <!-- BEFORE IMAGE -->
-        <div class="compare-overlay" id="compareOverlay">
-          <img 
-            src="BEFORE.jpg" 
-            alt="KN3X Remodel Before" 
-            class="absolute top-0 left-0 max-w-none h-full object-cover select-none pointer-events-none" 
-            id="beforeImg"
-            onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop'"
-          >
-          <span class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-black/80 text-gray-300 text-[10px] sm:text-xs font-heading font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg z-10">
-            BEFORE
-          </span>
-        </div>
-
-        <div class="compare-handle" id="compareHandle"></div>
-      </div>
-
-      <!-- FLYER INTERIOR SHOWCASES -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mt-8 sm:mt-12">
-        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Living Room Remodeling">
-          <div class="p-3.5 sm:p-4">
-            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Open-Plan Living</h4>
-            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Flooring, lighting and wall relocation.</p>
-          </div>
-        </div>
-        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Kitchen Remodeling">
-          <div class="p-3.5 sm:p-4">
-            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Modern Kitchen</h4>
-            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Custom islands, quartz counters and plumbing.</p>
-          </div>
-        </div>
-        <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop" class="w-full h-40 sm:h-48 object-cover" alt="Bathroom Remodeling">
-          <div class="p-3.5 sm:p-4">
-            <h4 class="font-heading font-bold text-white text-xs sm:text-sm">Bathroom Update</h4>
-            <p class="text-[11px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1">Tile work, vanity installation & fixtures.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="why-us" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+  </section><section id="why-us" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
     <h2 class="text-2xl sm:text-4xl font-heading font-black text-white text-center">Why Choose KN3X?</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
       <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Local to Austin</h3><p class="text-sm text-gray-300 mt-2">Serving Austin and surrounding communities.</p></div>
@@ -643,76 +422,8 @@
       <div class="bg-brand-card border border-brand-border rounded-xl p-5"><h3 class="text-brand-orange font-bold">Know What Comes Next</h3><p class="text-sm text-gray-300 mt-2">Tell us what you have in mind. We will discuss the scope, availability and estimated cost so you can decide how to move forward.</p></div>
     </div>
   </section>
-
-  <!-- CALL TO ACTION (CTA) BANNER -->
-  <section id="contact" class="py-12 sm:py-16 px-4 sm:px-8 bg-brand-dark border-t border-brand-border"><span id="handyman" aria-hidden="true"></span>
-<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-<div><p class="text-xs font-bold text-brand-orange uppercase tracking-widest">Start Your Home Project</p>
-<h2 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Let's Bring Your Next Project to Life</h2>
-<p class="text-sm text-gray-300 mt-4 leading-relaxed">Share a few details about your project and the best way to reach you. We will contact you to review your needs, discuss availability and prepare an estimate.</p>
-<p class="text-xs text-gray-400 mt-4">Serving Austin and nearby communities. We confirm the scope, pricing and appointment details with you before scheduling the work.</p>
-<a href="tel:5124504988" class="inline-flex items-center gap-2 mt-5 text-brand-orange font-bold min-h-[44px]"><i class="fa-solid fa-phone" aria-hidden="true"></i> (512) 450-4988</a>
-</div><form id="handymanForm" action="https://formspree.io/f/meaavkwo" method="POST" class="bg-brand-card border border-brand-border rounded-xl p-5 space-y-4">
-<input type="hidden" name="subject" value="KN3X — New service request">
-<input type="hidden" name="Language" value="en">
-<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-        <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div><label for="handymanPhone" class="block text-sm mb-1">Phone (optional)</label><input type="tel" id="handymanPhone" name="phone" autocomplete="tel" maxlength="40" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-          <div><label for="handymanZip" class="block text-sm mb-1">ZIP code</label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        </div>
-        <div><label for="projectService" class="block text-sm mb-1">Project Area</label><select id="projectService" name="service" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base text-white" required>
-<option value="Painting">Interior &amp; Exterior Painting</option>
-<option value="Landscaping">Landscaping &amp; Walkways</option>
-<option value="Plumbing">Plumbing</option>
-<option value="Carpentry">Carpentry &amp; Outdoor Structures</option>
-<option value="Electrical">Residential Electrical Installations</option>
-<option value="Networks">Network &amp; Internet Installation</option>
-</select></div><div><label for="handymanJob" class="block text-sm mb-1">Tell Us About the Work</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Paint two rooms, build a pergola or install Ethernet in a home office. Include the location and approximate scope." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
-        <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Send Service Request</button>
-        <p class="text-xs text-gray-400">Complete the submission on the next screen. Prefer to speak with us? <a href="tel:5124504988" class="text-brand-orange">(512) 450-4988</a>.</p>
-        <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
-      </form></div></section>
-
-<section id="project-photos" class="py-10 sm:py-14 px-4 sm:px-8 max-w-7xl mx-auto" aria-labelledby="project-album-title">
-<p class="text-xs font-bold text-brand-orange uppercase tracking-widest">2025 Project Album</p>
-<h2 id="project-album-title" class="text-2xl sm:text-4xl font-heading font-bold text-white mt-2">Landscaping, Walkways &amp; Exterior Painting</h2>
-<p class="text-sm text-gray-400 mt-3 max-w-3xl">Follow this home's exterior transformation, from walkway preparation and decorative gravel to painting and outdoor lighting. These 24 photos follow the project from start to finish.</p>
-<p class="text-xs text-gray-400 mt-3 mb-6">May–July 2025 · Select any photo to enlarge it.</p>
-<div class="project-album-grid"><figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-01-1600.jpg" data-project-photo aria-label="Enlarge photo 01"><img src="assets/projects/2025/photo-01-480.jpg" alt="Walkway preparation with gravel, forms and reinforcing mesh." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>01 / 24</span><time datetime="2025-05-24">2025-05-24</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-02-1600.jpg" data-project-photo aria-label="Enlarge photo 02"><img src="assets/projects/2025/photo-02-480.jpg" alt="Concrete placement along the side walkway." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>02 / 24</span><time datetime="2025-05-26">2025-05-26</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-03-1600.jpg" data-project-photo aria-label="Enlarge photo 03"><img src="assets/projects/2025/photo-03-480.jpg" alt="Exterior wall light selected for the brick facade." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>03 / 24</span><time datetime="2025-06-02">2025-06-02</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-04-1600.jpg" data-project-photo aria-label="Enlarge photo 04"><img src="assets/projects/2025/photo-04-480.jpg" alt="Front entrance and walkway during construction." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>04 / 24</span><time datetime="2025-06-04">2025-06-04</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-05-1600.jpg" data-project-photo aria-label="Enlarge photo 05"><img src="assets/projects/2025/photo-05-480.jpg" alt="Front walkway forms and site preparation." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>05 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-06-1600.jpg" data-project-photo aria-label="Enlarge photo 06"><img src="assets/projects/2025/photo-06-480.jpg" alt="Measurements and formwork at the front walkway." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>06 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-07-1600.jpg" data-project-photo aria-label="Enlarge photo 07"><img src="assets/projects/2025/photo-07-480.jpg" alt="View of the home during the walkway work." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>07 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-08-1600.jpg" data-project-photo aria-label="Enlarge photo 08"><img src="assets/projects/2025/photo-08-480.jpg" alt="Gravel being compacted between concrete slabs." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>08 / 24</span><time datetime="2025-06-21">2025-06-21</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-09-1600.jpg" data-project-photo aria-label="Enlarge photo 09"><img src="assets/projects/2025/photo-09-480.jpg" alt="Close-up of gravel placement between walkway slabs." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>09 / 24</span><time datetime="2025-06-21">2025-06-21</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-10-1600.jpg" data-project-photo aria-label="Enlarge photo 10"><img src="assets/projects/2025/photo-10-480.jpg" alt="Concrete walkway slabs with decorative gravel and edging." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>10 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-11-1600.jpg" data-project-photo aria-label="Enlarge photo 11"><img src="assets/projects/2025/photo-11-480.jpg" alt="Curved landscape edging alongside the walkway." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>11 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-12-1600.jpg" data-project-photo aria-label="Enlarge photo 12"><img src="assets/projects/2025/photo-12-480.jpg" alt="Walkway finishing details and gravel border." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>12 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-13-1600.jpg" data-project-photo aria-label="Enlarge photo 13"><img src="assets/projects/2025/photo-13-480.jpg" alt="Pathway lights and decorative gravel during installation." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>13 / 24</span><time datetime="2025-06-24">2025-06-24</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-14-1600.jpg" data-project-photo aria-label="Enlarge photo 14"><img src="assets/projects/2025/photo-14-480.jpg" alt="Completed side walkway with concrete slabs and gravel." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>14 / 24</span><time datetime="2025-06-26">2025-06-26</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-15-1600.jpg" data-project-photo aria-label="Enlarge photo 15"><img src="assets/projects/2025/photo-15-480.jpg" alt="Exterior painting and trim work at the entrance." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>15 / 24</span><time datetime="2025-07-14">2025-07-14</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-16-1600.jpg" data-project-photo aria-label="Enlarge photo 16"><img src="assets/projects/2025/photo-16-480.jpg" alt="Finished garage facade and walkway lighting at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>16 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-17-1600.jpg" data-project-photo aria-label="Enlarge photo 17"><img src="assets/projects/2025/photo-17-480.jpg" alt="Entryway lighting and landscaped gravel beds at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>17 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-18-1600.jpg" data-project-photo aria-label="Enlarge photo 18"><img src="assets/projects/2025/photo-18-480.jpg" alt="Exterior wall lighting along the entrance at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>18 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-19-1600.jpg" data-project-photo aria-label="Enlarge photo 19"><img src="assets/projects/2025/photo-19-480.jpg" alt="Finished entrance, plants and pathway lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>19 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-20-1600.jpg" data-project-photo aria-label="Enlarge photo 20"><img src="assets/projects/2025/photo-20-480.jpg" alt="Wide nighttime view of the finished front facade." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>20 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-21-1600.jpg" data-project-photo aria-label="Enlarge photo 21"><img src="assets/projects/2025/photo-21-480.jpg" alt="Finished garage facade with exterior lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>21 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-22-1600.jpg" data-project-photo aria-label="Enlarge photo 22"><img src="assets/projects/2025/photo-22-480.jpg" alt="Completed entrance with painted trim and wall lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>22 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-23-1600.jpg" data-project-photo aria-label="Enlarge photo 23"><img src="assets/projects/2025/photo-23-480.jpg" alt="Front walkway and facade illuminated at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>23 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
-<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-24-1600.jpg" data-project-photo aria-label="Enlarge photo 24"><img src="assets/projects/2025/photo-24-480.jpg" alt="Exterior view with landscape edging and lighting at dusk." width="480" height="270" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>24 / 24</span><time datetime="2025-07-18">2025-07-18</time></figcaption></figure></div>
-</section>
-<dialog id="project-photo-viewer" aria-label="Project photo viewer">
-<div class="project-viewer-toolbar"><span id="project-photo-count" aria-live="polite"></span><button type="button" id="project-photo-close" aria-label="Close photo viewer">×</button></div>
-<figure><img id="project-photo-large" alt=""><figcaption id="project-photo-caption"></figcaption></figure>
-<div class="project-viewer-controls"><button type="button" id="project-photo-prev" aria-label="Previous photo">←</button><button type="button" id="project-photo-next" aria-label="Next photo">→</button></div>
-</dialog>
-
-  <!-- FOOTER -->
+</main>
+<!-- FOOTER -->
   <footer class="bg-brand-dark border-t border-brand-border pt-12 sm:pt-16 pb-8 px-4 sm:px-8 text-gray-400 text-sm">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-brand-border/60">
       
@@ -732,7 +443,7 @@
       <!-- Col 2: Capabilities -->
       <div>
         <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-2.5 sm:mb-3">Capabilities</h4>
-        <ul class="space-y-1.5 sm:space-y-2 text-xs"><li><a href="#services" class="hover:text-brand-orange">Interior &amp; Exterior Painting</a></li><li><a href="#services" class="hover:text-brand-orange">Landscaping &amp; Walkways</a></li><li><a href="#services" class="hover:text-brand-orange">Plumbing</a></li><li><a href="#services" class="hover:text-brand-orange">Carpentry &amp; Outdoor Structures</a></li><li><a href="#services" class="hover:text-brand-orange">Residential Electrical Installations</a></li><li><a href="#services" class="hover:text-brand-orange">Network &amp; Internet Installation</a></li><li><a href="#cad-fabrication" class="hover:text-brand-orange">Our Planning Approach</a></li></ul>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs"><li><a href="services.html" class="hover:text-brand-orange">Interior &amp; Exterior Painting</a></li><li><a href="services.html" class="hover:text-brand-orange">Landscaping &amp; Walkways</a></li><li><a href="services.html" class="hover:text-brand-orange">Plumbing</a></li><li><a href="services.html" class="hover:text-brand-orange">Carpentry &amp; Outdoor Structures</a></li><li><a href="services.html" class="hover:text-brand-orange">Residential Electrical Installations</a></li><li><a href="services.html" class="hover:text-brand-orange">Network &amp; Internet Installation</a></li><li><a href="services.html#cad-fabrication" class="hover:text-brand-orange">Our Planning Approach</a></li></ul>
       </div>
 
       <!-- Col 3: Contact Details -->
@@ -749,8 +460,8 @@
     <div class="max-w-7xl mx-auto mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-3 sm:gap-4">
       <p>© 2026 KN3X PROJECT LLC. All rights reserved. Texas Homes • Texas Values.</p>
       <div class="flex space-x-6">
-        <a href="#" class="hover:text-gray-400">Privacy Policy</a>
-        <a href="#" class="hover:text-gray-400">Terms of Service</a>
+        <a href="index.html" class="hover:text-gray-400">Privacy Policy</a>
+        <a href="index.html" class="hover:text-gray-400">Terms of Service</a>
       </div>
     </div>
   </footer>
@@ -813,75 +524,6 @@
   </div>
 
   <!-- JAVASCRIPT: SLIDER & FORM HANDLERS -->
-  <script>
-    const container = document.getElementById('compareContainer');
-    const overlay = document.getElementById('compareOverlay');
-    const handle = document.getElementById('compareHandle');
-    const beforeImg = document.getElementById('beforeImg');
-
-    function syncImgWidth() {
-      if (container && beforeImg) {
-        beforeImg.style.width = `${container.offsetWidth}px`;
-      }
-    }
-    window.addEventListener('resize', syncImgWidth);
-    syncImgWidth();
-
-    let isDown = false;
-    function moveSlider(clientX) {
-      const rect = container.getBoundingClientRect();
-      let pos = clientX - rect.left;
-      if (pos < 0) pos = 0;
-      if (pos > rect.width) pos = rect.width;
-      const percentage = (pos / rect.width) * 100;
-      overlay.style.width = percentage + '%';
-      handle.style.left = percentage + '%';
-    }
-
-    container.addEventListener('mousedown', () => isDown = true);
-    window.addEventListener('mouseup', () => isDown = false);
-    container.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      moveSlider(e.clientX);
-    });
-
-    container.addEventListener('touchstart', () => isDown = true);
-    window.addEventListener('touchend', () => isDown = false);
-    container.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      moveSlider(e.touches[0].clientX);
-    });
-
-    function openEstimateModal() {
-      document.getElementById('estimateModal').classList.remove('hidden');
-    }
-    function closeEstimateModal() {
-      document.getElementById('estimateModal').classList.add('hidden');
-    }
-
-    function requestSpecificService(serviceName) {
-      document.getElementById('modalService').value = serviceName;
-      openEstimateModal();
-    }
-
-    function handleSearch(e) {
-      e.preventDefault();
-      const service = document.getElementById('hero-service-select').value;
-      const zip = document.getElementById('hero-zip').value;
-      document.getElementById('modalService').value = service;
-      document.getElementById('modalZip').value = zip;
-      openEstimateModal();
-    }
-
-
-
-    // Native POST lets Formspree handle verification and confirmation.
-    ['handymanForm', 'estimateForm'].forEach(id => {
-      document.getElementById(id).addEventListener('submit', event => {
-        event.currentTarget.elements.namedItem('Language').value = document.documentElement.lang;
-      });
-    });
-  </script>
-  <script src="project-album.js?v=1" defer></script>
+  <script src="site.js?v=multipage-20" defer></script>
 </body>
 </html>
