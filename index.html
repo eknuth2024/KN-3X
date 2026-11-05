@@ -235,8 +235,30 @@
     @media(min-width:1100px){#home .hero-main-content{max-width:1000px;margin-left:auto;margin-right:260px}}
     @media(max-width:1099px){.texas-service-badge{position:relative;top:auto;right:auto;width:165px;margin:16px auto 0}.texas-service-copy span{font-size:12px}.texas-service-copy strong{font-size:27px}.texas-service-copy span:last-child{font-size:5.8px}}
 
+
+.project-album-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.project-photo{margin:0;min-width:0;background:#161920;border:1px solid #262c38;border-radius:12px;overflow:hidden}
+.project-photo-open{display:block;position:relative;background:#111419;aspect-ratio:4/3}
+.project-photo-open img{width:100%;height:100%;object-fit:contain}
+.project-photo-zoom{position:absolute;right:8px;bottom:8px;color:#fff;background:#0b0d10c9;border-radius:50%;width:30px;height:30px;text-align:center;line-height:30px}
+.project-photo figcaption{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;font-size:11px;color:#b5bcc8}
+.project-photo figcaption span{color:#ff5e00;font-weight:700}
+.project-photo-open:focus-visible{outline:3px solid #ff5e00;outline-offset:-3px}
+#project-photo-viewer{width:min(1100px,96vw);max-height:96dvh;margin:auto;padding:12px;background:#101318;color:#fff;border:1px solid #444b58;border-radius:14px}
+#project-photo-viewer::backdrop{background:rgba(0,0,0,.9)}
+.project-viewer-toolbar{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+#project-photo-viewer button{min-width:44px;min-height:44px;border:1px solid #555d67;border-radius:8px;background:#20252d;color:#fff;font-size:24px}
+#project-photo-viewer button:focus-visible{outline:2px solid #ff5e00;outline-offset:2px}
+#project-photo-viewer figure{margin:10px 0}
+#project-photo-large{width:100%;height:68dvh;object-fit:contain}
+#project-photo-caption{font-size:12px;text-align:center;color:#d1d5db;margin-top:10px}
+.project-viewer-controls{display:flex;justify-content:center;gap:16px}
+#project-photo-viewer button:disabled{opacity:.35}
+@media(max-width:900px){.project-album-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:639px){.project-album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-photo figcaption{font-size:10px;padding:8px;gap:4px}#project-photo-large{height:60dvh}}
+
 </style>
-  <script src="language.js?v=texas-badge-17" defer></script>
+  <script src="language.js?v=project-album-19" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
 </head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
@@ -654,12 +676,41 @@
         <p id="handymanStatus" data-language-status="" role="status" class="text-sm text-brand-orange"></p>
       </form></div></section>
 
-<section id="project-photos" class="py-10 sm:py-14 px-4 sm:px-8 max-w-7xl mx-auto">
-<div class="bg-brand-card border border-brand-border rounded-xl p-6 sm:p-8 text-center">
-<p class="text-xs font-bold text-brand-orange uppercase tracking-widest">2025 Projects</p>
-<h2 class="text-2xl sm:text-3xl font-heading font-bold text-white mt-2">Photo Gallery</h2>
-<p class="text-sm text-gray-400 mt-3">A closer look at our 2025 projects is coming soon.</p>
-</div></section>
+<section id="project-photos" class="py-10 sm:py-14 px-4 sm:px-8 max-w-7xl mx-auto" aria-labelledby="project-album-title">
+<p class="text-xs font-bold text-brand-orange uppercase tracking-widest">2025 Project Album</p>
+<h2 id="project-album-title" class="text-2xl sm:text-4xl font-heading font-bold text-white mt-2">Landscaping, Walkways &amp; Exterior Painting</h2>
+<p class="text-sm text-gray-400 mt-3 max-w-3xl">Follow this home's exterior transformation, from walkway preparation and decorative gravel to painting and outdoor lighting. These 24 photos follow the project from start to finish.</p>
+<p class="text-xs text-gray-400 mt-3 mb-6">May–July 2025 · Select any photo to enlarge it.</p>
+<div class="project-album-grid"><figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-01-1600.jpg" data-project-photo aria-label="Enlarge photo 01"><img src="assets/projects/2025/photo-01-480.jpg" alt="Walkway preparation with gravel, forms and reinforcing mesh." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>01 / 24</span><time datetime="2025-05-24">2025-05-24</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-02-1600.jpg" data-project-photo aria-label="Enlarge photo 02"><img src="assets/projects/2025/photo-02-480.jpg" alt="Concrete placement along the side walkway." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>02 / 24</span><time datetime="2025-05-26">2025-05-26</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-03-1600.jpg" data-project-photo aria-label="Enlarge photo 03"><img src="assets/projects/2025/photo-03-480.jpg" alt="Exterior wall light selected for the brick facade." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>03 / 24</span><time datetime="2025-06-02">2025-06-02</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-04-1600.jpg" data-project-photo aria-label="Enlarge photo 04"><img src="assets/projects/2025/photo-04-480.jpg" alt="Front entrance and walkway during construction." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>04 / 24</span><time datetime="2025-06-04">2025-06-04</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-05-1600.jpg" data-project-photo aria-label="Enlarge photo 05"><img src="assets/projects/2025/photo-05-480.jpg" alt="Front walkway forms and site preparation." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>05 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-06-1600.jpg" data-project-photo aria-label="Enlarge photo 06"><img src="assets/projects/2025/photo-06-480.jpg" alt="Measurements and formwork at the front walkway." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>06 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-07-1600.jpg" data-project-photo aria-label="Enlarge photo 07"><img src="assets/projects/2025/photo-07-480.jpg" alt="View of the home during the walkway work." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>07 / 24</span><time datetime="2025-06-11">2025-06-11</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-08-1600.jpg" data-project-photo aria-label="Enlarge photo 08"><img src="assets/projects/2025/photo-08-480.jpg" alt="Gravel being compacted between concrete slabs." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>08 / 24</span><time datetime="2025-06-21">2025-06-21</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-09-1600.jpg" data-project-photo aria-label="Enlarge photo 09"><img src="assets/projects/2025/photo-09-480.jpg" alt="Close-up of gravel placement between walkway slabs." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>09 / 24</span><time datetime="2025-06-21">2025-06-21</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-10-1600.jpg" data-project-photo aria-label="Enlarge photo 10"><img src="assets/projects/2025/photo-10-480.jpg" alt="Concrete walkway slabs with decorative gravel and edging." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>10 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-11-1600.jpg" data-project-photo aria-label="Enlarge photo 11"><img src="assets/projects/2025/photo-11-480.jpg" alt="Curved landscape edging alongside the walkway." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>11 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-12-1600.jpg" data-project-photo aria-label="Enlarge photo 12"><img src="assets/projects/2025/photo-12-480.jpg" alt="Walkway finishing details and gravel border." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>12 / 24</span><time datetime="2025-06-23">2025-06-23</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-13-1600.jpg" data-project-photo aria-label="Enlarge photo 13"><img src="assets/projects/2025/photo-13-480.jpg" alt="Pathway lights and decorative gravel during installation." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>13 / 24</span><time datetime="2025-06-24">2025-06-24</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-14-1600.jpg" data-project-photo aria-label="Enlarge photo 14"><img src="assets/projects/2025/photo-14-480.jpg" alt="Completed side walkway with concrete slabs and gravel." width="360" height="480" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>14 / 24</span><time datetime="2025-06-26">2025-06-26</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-15-1600.jpg" data-project-photo aria-label="Enlarge photo 15"><img src="assets/projects/2025/photo-15-480.jpg" alt="Exterior painting and trim work at the entrance." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>15 / 24</span><time datetime="2025-07-14">2025-07-14</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-16-1600.jpg" data-project-photo aria-label="Enlarge photo 16"><img src="assets/projects/2025/photo-16-480.jpg" alt="Finished garage facade and walkway lighting at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>16 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-17-1600.jpg" data-project-photo aria-label="Enlarge photo 17"><img src="assets/projects/2025/photo-17-480.jpg" alt="Entryway lighting and landscaped gravel beds at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>17 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-18-1600.jpg" data-project-photo aria-label="Enlarge photo 18"><img src="assets/projects/2025/photo-18-480.jpg" alt="Exterior wall lighting along the entrance at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>18 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-19-1600.jpg" data-project-photo aria-label="Enlarge photo 19"><img src="assets/projects/2025/photo-19-480.jpg" alt="Finished entrance, plants and pathway lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>19 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-20-1600.jpg" data-project-photo aria-label="Enlarge photo 20"><img src="assets/projects/2025/photo-20-480.jpg" alt="Wide nighttime view of the finished front facade." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>20 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-21-1600.jpg" data-project-photo aria-label="Enlarge photo 21"><img src="assets/projects/2025/photo-21-480.jpg" alt="Finished garage facade with exterior lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>21 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-22-1600.jpg" data-project-photo aria-label="Enlarge photo 22"><img src="assets/projects/2025/photo-22-480.jpg" alt="Completed entrance with painted trim and wall lighting." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>22 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-23-1600.jpg" data-project-photo aria-label="Enlarge photo 23"><img src="assets/projects/2025/photo-23-480.jpg" alt="Front walkway and facade illuminated at night." width="480" height="360" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>23 / 24</span><time datetime="2025-07-17">2025-07-17</time></figcaption></figure>
+<figure class="project-photo"><a class="project-photo-open" href="assets/projects/2025/photo-24-1600.jpg" data-project-photo aria-label="Enlarge photo 24"><img src="assets/projects/2025/photo-24-480.jpg" alt="Exterior view with landscape edging and lighting at dusk." width="480" height="270" loading="lazy" decoding="async"><span class="project-photo-zoom" aria-hidden="true">↗</span></a><figcaption><span>24 / 24</span><time datetime="2025-07-18">2025-07-18</time></figcaption></figure></div>
+</section>
+<dialog id="project-photo-viewer" aria-label="Project photo viewer">
+<div class="project-viewer-toolbar"><span id="project-photo-count" aria-live="polite"></span><button type="button" id="project-photo-close" aria-label="Close photo viewer">×</button></div>
+<figure><img id="project-photo-large" alt=""><figcaption id="project-photo-caption"></figcaption></figure>
+<div class="project-viewer-controls"><button type="button" id="project-photo-prev" aria-label="Previous photo">←</button><button type="button" id="project-photo-next" aria-label="Next photo">→</button></div>
+</dialog>
 
   <!-- FOOTER -->
   <footer class="bg-brand-dark border-t border-brand-border pt-12 sm:pt-16 pb-8 px-4 sm:px-8 text-gray-400 text-sm">
@@ -831,5 +882,6 @@
       });
     });
   </script>
+  <script src="project-album.js?v=1" defer></script>
 </body>
 </html>
