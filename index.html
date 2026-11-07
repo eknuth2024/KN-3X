@@ -225,7 +225,11 @@
     .texas-service-copy span{display:block;font-size:15px;line-height:1.15;letter-spacing:.035em;white-space:nowrap}
     .texas-service-copy strong{display:block;color:#ff5e00;font-size:38px;line-height:1.12;font-weight:700;letter-spacing:.01em}
     .texas-service-copy span:last-child{font-size:8px;line-height:1.3;letter-spacing:0;margin-top:3px}
-    @media(min-width:1100px){#home .hero-main-content{max-width:1000px;margin-left:auto;margin-right:260px}}
+    /* Center the complete hero, including the map, at every desktop width. */
+    @media(min-width:1100px){
+      #home .hero-main-content{box-sizing:border-box;width:100%;max-width:1280px;margin-left:auto;margin-right:auto;padding-right:260px}
+      #home .texas-service-badge{right:0;top:0}
+    }
     @media(max-width:1099px){.texas-service-badge{position:relative;top:auto;right:auto;width:165px;margin:16px auto 0}.texas-service-copy span{font-size:12px}.texas-service-copy strong{font-size:27px}.texas-service-copy span:last-child{font-size:5.8px}}
 
 
