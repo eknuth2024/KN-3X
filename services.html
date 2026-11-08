@@ -260,6 +260,9 @@
 @media(max-width:767px){.planning-photo img{height:240px}}
 .sw-letter-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#d92d3b;color:white;border-radius:6px;font:700 16px/1 Arial,sans-serif;font-style:normal;flex-shrink:0}
 @media(max-width:639px){.sw-letter-icon{width:32px;height:32px;font-size:14px}}
+
+/* One photo card contains all information for each service. */
+.service-photo-card>a,.service-photo-card figure{display:flex;flex-direction:column;height:100%}.service-photo-card figcaption{display:flex;flex-direction:column;flex:1;padding:22px}.service-card-title{display:flex;align-items:flex-start;gap:10px}.service-card-title>i{color:#ff5e00;font-size:19px;margin-top:2px}.service-card-title h3{margin:0}.service-photo-card .service-card-tagline{color:#ff5e00;font-weight:600;font-size:13px;margin-top:12px;line-height:1.5}.service-photo-card .service-card-description{font-size:14px;color:#9ba3af;line-height:1.7;margin-top:12px;flex:1}.service-photo-card .service-card-link{font-size:14px;font-weight:700;color:#fff;margin-top:20px;min-height:32px}.service-showcase{padding-bottom:40px}@media(max-width:639px){.service-photo-card figcaption{padding:18px}.service-photo-card .service-card-description{font-size:13px}}
 </style>
   <script src="language.js?v=service-details-28" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
@@ -332,11 +335,12 @@
 </header>
 
   <main id="main-content">
+<span id="services" aria-hidden="true"></span>
 <section id="service-showcase" class="service-showcase" aria-labelledby="service-showcase-title">
     <div class="service-showcase-heading">
       <div>
         <p class="service-showcase-eyebrow">Ideas for Your Home</p>
-        <h2 id="service-showcase-title">Explore Our Services</h2>
+        <h1 id="service-showcase-title">Explore Our Services</h1>
         <p class="service-showcase-intro">Discover ways to refresh your interiors, improve your outdoor spaces and make everyday living more comfortable.</p>
       </div>
       <div class="service-showcase-controls" aria-label="Service photo controls">
@@ -348,108 +352,43 @@
 <article class="service-photo-card"><a href="painting.html">
         <figure>
           <img src="assets/services/service-painting.jpg" alt="Painter applying a fresh coat to a living room wall with furniture and floors protected." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Interior &amp; Exterior Painting</h3>
-            <p>Careful preparation and fresh finishes for your home.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i><h3>Interior &amp; Exterior Painting</h3></div><p class="service-card-tagline">A Fresh Look, Inside and Out</p><p class="service-card-description">Refresh your walls, exterior surfaces and cabinets with careful preparation and finishes suited to your space. We also prepare drywall for painting.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
 <article class="service-photo-card"><a href="landscaping.html">
         <figure>
           <img src="assets/services/service-landscaping.jpg" alt="Worker positioning concrete slabs on a residential walkway." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Landscaping & Walkways</h3>
-            <p>Concrete and stone paths for outdoor spaces.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-leaf" aria-hidden="true"></i><h3>Landscaping &amp; Walkways</h3></div><p class="service-card-tagline">Make More of Your Outdoor Space</p><p class="service-card-description">Bring your outdoor ideas together with garden improvements, concrete or stone walkways and layouts that make your yard more inviting and practical.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
 <article class="service-photo-card"><a href="plumbing.html">
         <figure>
           <img src="assets/services/service-plumbing.jpg" alt="Worker adjusting the drain connection beneath a kitchen sink." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Plumbing</h3>
-            <p>Sink connections and plumbing details for your home.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i><h3>Plumbing</h3></div><p class="service-card-tagline">Practical Solutions for Everyday Use</p><p class="service-card-description">Update sinks, replace fixtures and address related plumbing needs. We review the existing installation and project requirements before agreeing on the work.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
 <article class="service-photo-card"><a href="carpentry.html">
         <figure>
           <img src="assets/services/service-carpentry.jpg" alt="Carpenter measuring a cedar beam for a pergola." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Carpentry & Pergolas</h3>
-            <p>Custom woodwork for your outdoor living space.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-hammer" aria-hidden="true"></i><h3>Carpentry &amp; Outdoor Structures</h3></div><p class="service-card-tagline">Woodwork That Fits Your Home</p><p class="service-card-description">Add function and character with custom shelving, trim, woodwork and pergolas. Dimensions, materials and installation details are planned around your space.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
 <article class="service-photo-card"><a href="electrical.html">
         <figure>
           <img src="assets/services/service-electrical.jpg" alt="Technician installing a wall light switch." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Electrical Installations</h3>
-            <p>Practical upgrades for your home's switches and fixtures.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><h3>Residential Electrical Installations</h3></div><p class="service-card-tagline">Lighting and Connections That Work for You</p><p class="service-card-description">Improve everyday comfort with lighting, switches, outlets and related installations. We review the scope and installation requirements before confirming your project.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
 <article class="service-photo-card"><a href="networks.html">
         <figure>
           <img src="assets/services/service-networks.jpg" alt="Technician connecting Ethernet cabling in a home office." width="960" height="640" loading="lazy" decoding="async">
-          <figcaption>
-            <h3>Network &amp; Internet Installation</h3>
-            <p>Organized connections for work and everyday life.</p>
-          <p class="text-brand-orange">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
+          <figcaption><div class="service-card-title"><i class="fa-solid fa-network-wired" aria-hidden="true"></i><h3>Network &amp; Internet Installation</h3></div><p class="service-card-tagline">A Better-Connected Home</p><p class="service-card-description">Connect your home office and everyday devices with Ethernet cabling, WiFi coverage improvements and organized equipment. We plan cable routes and mounting details before installation.</p><p class="service-card-link">View Service Details <span aria-hidden="true">↗</span></p></figcaption>
         </figure>
       </a></article>
     </div>
     <p class="service-showcase-hint">Swipe or use the arrows to explore.</p>
   </section>
-<section id="services" class="py-12 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto">
-<div class="text-center mb-8"><p class="text-xs font-bold text-brand-orange tracking-widest uppercase">Six Specialties for Your Home</p>
-<h1 class="text-2xl sm:text-4xl font-heading font-black text-white mt-2">Thoughtful Improvements for the Way You Live</h1>
-<p class="text-sm text-gray-400 mt-3 max-w-2xl mx-auto">Choose the service your space needs. We listen to your ideas, review the scope and plan the details with you before work begins.</p></div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Interior &amp; Exterior Painting</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">A Fresh Look, Inside and Out</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Refresh your walls, exterior surfaces and cabinets with careful preparation and finishes suited to your space. We also prepare drywall for painting.</p>
-<a href="painting.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Landscaping &amp; Walkways</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Make More of Your Outdoor Space</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Bring your outdoor ideas together with garden improvements, concrete or stone walkways and layouts that make your yard more inviting and practical.</p>
-<a href="landscaping.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Plumbing</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Practical Solutions for Everyday Use</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Update sinks, replace fixtures and address related plumbing needs. We review the existing installation and project requirements before agreeing on the work.</p>
-<a href="plumbing.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Carpentry &amp; Outdoor Structures</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Woodwork That Fits Your Home</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Add function and character with custom shelving, trim, woodwork and pergolas. Dimensions, materials and installation details are planned around your space.</p>
-<a href="carpentry.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Residential Electrical Installations</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">Lighting and Connections That Work for You</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Improve everyday comfort with lighting, switches, outlets and related installations. We review the scope and installation requirements before confirming your project.</p>
-<a href="electrical.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-<article class="bg-brand-card border border-brand-border rounded-xl p-5 sm:p-6 flex flex-col">
-<div class="w-11 h-11 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
-<h3 class="font-heading font-bold text-base text-white">Network &amp; Internet Installation</h3>
-<p class="text-xs font-semibold text-brand-orange mt-2">A Better-Connected Home</p>
-<p class="text-sm text-gray-400 mt-3 leading-relaxed flex-grow">Connect your home office and everyday devices with Ethernet cabling, WiFi coverage improvements and organized equipment. We plan cable routes and mounting details before installation.</p>
-<a href="networks.html" class="mt-5 inline-flex items-center gap-2 min-h-[44px] text-sm font-bold text-white hover:text-brand-orange transition">View Service Details <span aria-hidden="true">↗</span></a>
-</article>
-</div></section><section id="gallery" class="py-14 sm:py-20 bg-[#0E1116] border-b border-brand-border">
+<section id="gallery" class="py-14 sm:py-20 bg-[#0E1116] border-b border-brand-border">
     <div class="max-w-6xl mx-auto px-4 sm:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
