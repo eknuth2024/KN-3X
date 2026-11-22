@@ -1,0 +1,63 @@
+/* Brighter gray surfaces; the top contact bar and navigation retain their original palette. */
+:root {
+  --page-gray: #30353d;
+  --section-gray: #353b44;
+  --surface-gray: #3d444e;
+  --surface-hover-gray: #474f5a;
+  --surface-border: #5c6572;
+  --secondary-copy: #d2d8e1;
+}
+body[class] { background-color: var(--page-gray); }
+#main-content { background-color: var(--page-gray); }
+#main-content #home,
+#main-content #contact { background-color: var(--page-gray); }
+#main-content #gallery,
+#main-content #cad-fabrication { background-color: var(--section-gray); }
+#main-content .bg-brand-card,
+#main-content .service-photo-card,
+#main-content .detail-item,
+#main-content .detail-next,
+#main-content .detail-examples figure,
+#main-content .project-photo {
+  background-color: var(--surface-gray);
+  border-color: var(--surface-border);
+}
+#main-content .service-photo-card:hover { background-color: var(--surface-hover-gray); }
+#main-content [class~="bg-brand-card/95"] { background-color: rgb(61 68 78 / 95%); }
+#main-content [class~="border-brand-border"],
+#main-content [class*="border-brand-border/"] { border-color: var(--surface-border); }
+#home > .absolute.inset-0 > .bg-gradient-to-t {
+  background-image: linear-gradient(to top, #30353d, rgb(48 53 61 / 82%), rgb(48 53 61 / 68%));
+}
+#main-content .text-gray-400,
+#main-content .text-gray-500,
+#main-content .service-showcase-intro,
+#main-content .service-showcase-hint,
+#main-content .service-card-description,
+#main-content .service-photo-card figcaption p:not(.service-card-tagline):not(.service-card-link),
+#main-content .detail-hero p,
+#main-content .detail-item p,
+#main-content .detail-next p,
+#main-content .detail-note,
+#main-content .project-photo figcaption { color: var(--secondary-copy); }
+/* A lighter orange keeps small accent text readable on the brighter surfaces. */
+#main-content .text-brand-orange,
+#main-content .service-showcase-eyebrow,
+#main-content .service-card-tagline,
+#main-content .detail-back,
+#main-content .project-photo figcaption span { color: #ff9b62; }
+#main-content input:not([type="hidden"]),
+#main-content select,
+#main-content textarea,
+#estimateModal input:not([type="hidden"]),
+#estimateModal select,
+#estimateModal textarea {
+  background-color: #30363f;
+  border-color: var(--surface-border);
+}
+#hero-service-select option { background-color: #30363f; color: #fff; }
+body > footer { background-color: #272c33; border-color: var(--surface-border); }
+body > footer .text-gray-400,
+body > footer .text-gray-500 { color: #c0c8d3; }
+#estimateModal > .bg-brand-card { background-color: var(--surface-gray); border-color: var(--surface-border); }
+#estimateModal .text-gray-400 { color: var(--secondary-copy); }
