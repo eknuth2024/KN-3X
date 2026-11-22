@@ -205,35 +205,45 @@ body > .project-mobile-nav a[aria-current="page"]::after {
 #home .texas-contact-links { flex-direction:row; justify-content:center; gap:6px; }
 #main-content #home .texas-contact-links a { white-space:nowrap; }
 
-/* Readable introduction and simple orange contact links. */
+
+/* White hero typography over the house, without a text panel. */
+#home > .absolute.inset-0 > .bg-gradient-to-t {
+  background-image:linear-gradient(to top,#cbd1d8 0%,rgba(24,33,45,.62) 34%,rgba(24,33,45,.58) 100%);
+}
+#main-content #home h1,
+#main-content #home .hero-main-content > p { color:#fff; }
 #main-content #home .hero-main-content > p {
-  color:#17212d; font-weight:500; text-shadow:none;
-  background:rgba(244,247,250,.90); border-radius:10px; padding:10px 14px;
+  font-weight:500; background:transparent; border:0; border-radius:0; padding:0;
+  text-shadow:0 2px 5px rgba(0,0,0,.65);
 }
 #main-content #home .texas-contact-links a {
-  background:transparent; border:0; border-radius:0; box-shadow:none;
-  color:#c74600; font-size:14px; font-weight:800;
-  min-height:40px; padding:5px 3px; text-shadow:0 1px 1px rgba(255,255,255,.8);
+  background:#ff5e00; border:0; border-radius:999px; box-shadow:none;
+  color:#fff; font-size:12px; font-weight:700;
+  min-height:28px; padding:4px 11px; gap:6px; text-shadow:none;
 }
 #main-content #home .texas-contact-links a:hover {
-  background:transparent; box-shadow:none; color:#963400;
-  text-decoration:underline; text-underline-offset:4px;
+  background:#d64e00; box-shadow:none; color:#fff; text-decoration:none;
 }
-#home .texas-contact-links { gap:12px; margin-top:0; }
-#home .texas-contact-links i { font-size:17px; }
+#home .texas-contact-links { gap:8px; margin-top:2px; }
+#home .texas-contact-links i { font-size:14px; }
+#main-content #home .hero-search-panel button[type="submit"] {
+  min-height:38px; height:auto; padding:9px 12px; font-size:12px; line-height:1.3;
+  align-self:center; border-radius:9px; box-shadow:0 3px 8px rgba(255,94,0,.18);
+}
 @media(max-width:767px) {
-  #main-content #home { padding-top:20px; padding-bottom:24px; }
+  #main-content #home { padding-top:16px; padding-bottom:24px; }
   #home .hero-main-content { display:flex; flex-direction:column; align-items:stretch; }
-  #home .hero-main-content > .inline-flex { align-self:center; }
+  #home .hero-main-content > .inline-flex { align-self:center; margin-bottom:10px; }
   #main-content #home .hero-main-content > p {
-    font-size:13px; line-height:1.5; margin-top:10px; padding:9px 12px;
+    font-size:12px; line-height:1.5; margin-top:8px; padding:0;
   }
-  #home .hero-search-panel { order:1; width:100%; margin-top:14px; }
-  #home .hero-search-panel form { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; }
+  #home .texas-service-badge { order:1; margin:8px auto 0; }
+  #home .texas-map-visual { width:120px; }
+  #home .hero-search-panel { order:2; width:100%; margin-top:10px; }
+  #home .hero-search-panel form { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:6px; }
   #home .hero-search-panel form > div:first-child { grid-column:1 / -1; }
   #home .hero-search-panel form > div:nth-child(2) { border-top:0; padding-top:0; }
-  #home .hero-search-panel form > div:last-child { padding-top:16px; }
-  #home .texas-service-badge { order:2; margin:12px auto 0; }
-  #home .texas-map-visual { width:120px; }
+  #home .hero-search-panel form > div:last-child { padding-top:16px; justify-content:center; }
+  #main-content #home .hero-search-panel button[type="submit"] { width:auto; max-width:100%; }
   #home .hero-main-content > .flex.flex-wrap { order:3; margin-top:12px; }
 }
