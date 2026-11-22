@@ -426,3 +426,15 @@ body > .project-mobile-nav a[aria-current="page"]::after {
   #main-content #home .hero-search-panel button[type="submit"] { font-size:14px; }
   #main-content #home .hero-search-panel #hero-zip { font-size:16px; }
 }
+
+/* Light footer shared by desktop and mobile, with readable matching text. */
+body > footer {
+  background-color:var(--page-gray); border-color:var(--surface-border);
+  color:var(--secondary-copy);
+}
+body > footer .text-white,body > footer .text-gray-300 { color:var(--content-ink); }
+body > footer .text-gray-400,body > footer .text-gray-500 { color:var(--secondary-copy); }
+body > footer .text-brand-orange { color:#b64200; }
+body > footer [class*="border-brand-border"] { border-color:var(--surface-border); }
+body > footer a:hover { color:#b64200; }
+body > footer a:focus-visible { outline:2px solid #b64200; outline-offset:3px; }
