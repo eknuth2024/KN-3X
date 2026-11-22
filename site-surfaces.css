@@ -440,3 +440,7 @@ body > footer a:hover { color:#b64200; }
 body > footer a:focus-visible { outline:2px solid #b64200; outline-offset:3px; }
 
 body > footer[class] { background-color:var(--page-gray); color:var(--secondary-copy); border-color:var(--surface-border); }
+
+/* A deeper gray footer provides separation from the light content. */
+body > footer[class] { background-color:#b8c0cb; border-color:#8d98a7; }
+body > footer [class*="border-brand-border"] { border-color:#929dac; }
