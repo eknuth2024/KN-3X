@@ -247,3 +247,48 @@ body > .project-mobile-nav a[aria-current="page"]::after {
   #main-content #home .hero-search-panel button[type="submit"] { width:auto; max-width:100%; }
   #home .hero-main-content > .flex.flex-wrap { order:3; margin-top:12px; }
 }
+
+/* Equal control heights and shared baseline for the estimate form. */
+#home .hero-search-panel form { align-items:end; }
+#home .hero-search-panel form > div { padding-top:0; }
+#home .hero-search-panel label { height:16px; line-height:16px; padding-top:0; margin-bottom:4px; }
+#home .hero-search-panel form > div > .flex { padding-top:0; padding-bottom:0; }
+#main-content #home .hero-search-panel select,
+#main-content #home .hero-search-panel input,
+#main-content #home .hero-search-panel button[type="submit"] {
+  box-sizing:border-box; height:44px; min-height:44px; max-height:44px;
+  padding:0 10px; line-height:1.25; margin:0; align-self:auto;
+}
+#home .hero-search-panel form > div:last-child { align-items:end; padding:0; }
+#main-content #home .hero-search-panel button[type="submit"] { width:100%; }
+
+/* Instagram left, larger Texas silhouette center, email right. */
+#home .texas-service-badge {
+  display:grid; grid-template-columns:max-content minmax(0,1fr) max-content;
+  align-items:center; column-gap:6px; width:460px; max-width:100%;
+}
+#home .texas-map-visual { grid-column:2; grid-row:1; width:260px; margin:0 auto; }
+#home .texas-contact-links { display:contents; }
+#home .texas-contact-links a:first-child { grid-column:3; grid-row:1; }
+#home .texas-contact-links a:last-child { grid-column:1; grid-row:1; }
+#home .texas-service-copy { left:calc(60.5% - 63px); width:126px; }
+@media(min-width:1100px) {
+  #home .hero-main-content { padding-right:460px; }
+}
+@media(max-width:1099px) {
+  #home .texas-service-badge { width:400px; }
+  #home .texas-map-visual { width:200px; }
+  #home .texas-service-copy { left:calc(60.5% - 45px); width:90px; }
+}
+@media(max-width:767px) {
+  #home .texas-service-badge { width:100%; margin:8px auto 0; column-gap:4px; }
+  #home .texas-map-visual { width:150px; }
+  #home .texas-service-copy { left:calc(60.5% - 33px); width:66px; }
+  #main-content #home .texas-contact-links a { font-size:11px; padding:4px 8px; gap:4px; }
+  #home .texas-contact-links i { font-size:12px; }
+  #home .hero-search-panel form > div:last-child { padding-top:0; }
+}
+@media(max-width:374px) {
+  #home .texas-map-visual { width:135px; }
+  #main-content #home .texas-contact-links a { font-size:10px; padding:4px 6px; }
+}
