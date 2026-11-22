@@ -1,63 +1,88 @@
-/* Brighter gray surfaces; the top contact bar and navigation retain their original palette. */
+/* Light gray content surfaces. Header and contact/language bar keep their original colors. */
 :root {
-  --page-gray: #30353d;
-  --section-gray: #353b44;
-  --surface-gray: #3d444e;
-  --surface-hover-gray: #474f5a;
-  --surface-border: #5c6572;
-  --secondary-copy: #d2d8e1;
+  --page-gray: #e4e7eb;
+  --section-gray: #d8dde3;
+  --surface-gray: #f5f6f8;
+  --surface-hover-gray: #ffffff;
+  --surface-border: #b6bec9;
+  --secondary-copy: #4b5563;
+  --content-ink: #202833;
 }
 body[class] { background-color: var(--page-gray); }
-#main-content { background-color: var(--page-gray); }
-#main-content #home,
-#main-content #contact { background-color: var(--page-gray); }
-#main-content #gallery,
-#main-content #cad-fabrication { background-color: var(--section-gray); }
-#main-content .bg-brand-card,
-#main-content .service-photo-card,
-#main-content .detail-item,
-#main-content .detail-next,
-#main-content .detail-examples figure,
-#main-content .project-photo {
-  background-color: var(--surface-gray);
-  border-color: var(--surface-border);
+#main-content { background-color: var(--page-gray); color: var(--content-ink); }
+#main-content #home, #main-content #contact { background-color: var(--page-gray); }
+#main-content #gallery, #main-content #cad-fabrication { background-color: var(--section-gray); }
+#main-content .bg-brand-card, #main-content .service-photo-card,
+#main-content .detail-item, #main-content .detail-next,
+#main-content .detail-examples figure, #main-content .project-photo {
+  background-color: var(--surface-gray); border-color: var(--surface-border);
 }
 #main-content .service-photo-card:hover { background-color: var(--surface-hover-gray); }
-#main-content [class~="bg-brand-card/95"] { background-color: rgb(61 68 78 / 95%); }
-#main-content [class~="border-brand-border"],
-#main-content [class*="border-brand-border/"] { border-color: var(--surface-border); }
+#main-content [class~="bg-brand-card/95"] { background-color: rgb(245 246 248 / 96%); }
+#main-content [class~="border-brand-border"], #main-content [class*="border-brand-border/"] { border-color: var(--surface-border); }
 #home > .absolute.inset-0 > .bg-gradient-to-t {
-  background-image: linear-gradient(to top, #30353d, rgb(48 53 61 / 82%), rgb(48 53 61 / 68%));
+  background-image: linear-gradient(to top, #e4e7eb, rgb(228 231 235 / 88%), rgb(228 231 235 / 72%));
 }
-#main-content .text-gray-400,
-#main-content .text-gray-500,
-#main-content .service-showcase-intro,
-#main-content .service-showcase-hint,
-#main-content .service-card-description,
-#main-content .service-photo-card figcaption p:not(.service-card-tagline):not(.service-card-link),
-#main-content .detail-hero p,
-#main-content .detail-item p,
-#main-content .detail-next p,
-#main-content .detail-note,
+#main-content :is(h1,h2,h3,h4), #main-content .text-white,
+#main-content #service-showcase-title, #main-content .planning-tool-badge,
+#main-content .service-card-link, #main-content .detail-other a {
+  color: var(--content-ink);
+}
+#main-content p, #main-content .text-gray-200, #main-content .text-gray-300,
+#main-content .text-gray-400, #main-content .text-gray-500,
+#main-content .service-showcase-intro, #main-content .service-showcase-hint,
+#main-content .service-photo-card figcaption p, #main-content .detail-note,
 #main-content .project-photo figcaption { color: var(--secondary-copy); }
-/* A lighter orange keeps small accent text readable on the brighter surfaces. */
-#main-content .text-brand-orange,
-#main-content .service-showcase-eyebrow,
-#main-content .service-card-tagline,
-#main-content .detail-back,
-#main-content .project-photo figcaption span { color: #ff9b62; }
-#main-content input:not([type="hidden"]),
-#main-content select,
-#main-content textarea,
-#estimateModal input:not([type="hidden"]),
-#estimateModal select,
-#estimateModal textarea {
-  background-color: #30363f;
-  border-color: var(--surface-border);
+#main-content .text-brand-orange, #main-content .service-showcase-eyebrow,
+#main-content .service-photo-card .service-card-tagline,
+#main-content .detail-back, #main-content .project-photo figcaption span,
+#main-content .service-photo-card>a:hover h3 { color: #b64200; }
+#main-content .service-photo-card .service-card-link { color: var(--content-ink); }
+#main-content button, #main-content .detail-cta,
+#main-content #compareContainer .text-white, #main-content .sw-letter-icon { color: #fff; }
+#main-content input:not([type="hidden"]), #main-content select, #main-content textarea {
+  background-color: #fff; border-color: var(--surface-border); color: var(--content-ink);
 }
-#hero-service-select option { background-color: #30363f; color: #fff; }
-body > footer { background-color: #272c33; border-color: var(--surface-border); }
-body > footer .text-gray-400,
-body > footer .text-gray-500 { color: #c0c8d3; }
-#estimateModal > .bg-brand-card { background-color: var(--surface-gray); border-color: var(--surface-border); }
-#estimateModal .text-gray-400 { color: var(--secondary-copy); }
+#main-content input::placeholder, #main-content textarea::placeholder { color: #647080; opacity:1; }
+#hero-service-select option { background-color: #fff; color: var(--content-ink); }
+#home h1, #home .hero-main-content>p { filter: none; }
+#home .hero-main-content .bg-black\/40 { background-color: rgb(255 255 255 / 70%); color: #374151; border-color: #b6bec9; }
+body > footer { background-color: #303741; border-color: #626c7a; }
+body > footer .text-gray-400, body > footer .text-gray-500 { color: #d2d8e1; }
+/* Keep the photo viewer and estimate dialog legible over the light content. */
+#project-photo-viewer p, #project-photo-viewer figcaption { color: #d1d5db; }
+#estimateModal > .bg-brand-card { background-color: #3d444e; border-color: #5c6572; }
+#estimateModal .text-gray-400 { color: #d2d8e1; }
+#estimateModal input:not([type="hidden"]), #estimateModal select, #estimateModal textarea {
+  background-color: #30363f; border-color: #5c6572; color: #fff;
+}
+/* Mobile navigation is outside the blurred header so it remains fixed to the viewport. */
+body > .project-mobile-nav { display:none; }
+.bottom-nav-label {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+@media(max-width:1023px) {
+  body { padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px)); }
+  html { scroll-padding-bottom:calc(88px + env(safe-area-inset-bottom, 0px)); }
+  body > .project-mobile-nav {
+    position:fixed; inset:auto 0 0; z-index:40;
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px;
+    box-sizing:border-box; width:100%;
+    padding:8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+    background:#0e1116; border-top:1px solid #4a515d;
+    box-shadow:0 -4px 20px rgb(0 0 0 / 16%); overflow:visible;
+  }
+  body > .project-mobile-nav a {
+    position:relative; display:flex; align-items:center; justify-content:center;
+    min-width:44px; min-height:56px; padding:8px; border-radius:12px;
+    color:#e5e7eb; font-size:22px; line-height:1; text-decoration:none;
+  }
+  body > .project-mobile-nav a[aria-current="page"] { color:#ff8b48; background:#272e38; }
+  body > .project-mobile-nav a:hover, body > .project-mobile-nav a:focus-visible {
+    color:#ff8b48; background:#272e38;
+  }
+  body > .project-mobile-nav a:focus-visible { outline:2px solid #ff8b48; outline-offset:0; }
+  #main-content #home, #main-content #services, #main-content #gallery,
+  #main-content #contact, #main-content #cad-fabrication { scroll-margin-top:104px; }
+}
