@@ -132,3 +132,25 @@ body > .project-mobile-nav { display:none; }
   outline-offset:2px;
   border-color:#ff9b62;
 }
+
+/* Contact shortcuts sit immediately beneath the Texas map at every screen size. */
+#home .texas-service-badge { width:260px; pointer-events:auto; }
+#home .texas-map-visual { position:relative; width:230px; margin:0 auto; }
+#home .texas-contact-links { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+#main-content #home .texas-contact-links a {
+  display:flex; align-items:center; justify-content:center; gap:9px;
+  min-height:44px; padding:10px 12px;
+  background:#3d444e; border:1px solid #ff9b62; border-radius:10px;
+  color:#ffad7e; font-size:12px; font-weight:700; line-height:1.4;
+  box-shadow:0 3px 12px rgb(0 0 0 / 12%);
+  transition:background .18s ease,box-shadow .18s ease;
+}
+#home .texas-contact-links a:hover { background:#30363f; box-shadow:0 4px 16px rgb(255 94 0 / 20%); }
+#home .texas-contact-links a:focus-visible { outline:3px solid #ff5e00; outline-offset:3px; }
+#home .texas-contact-links i { flex-shrink:0; font-size:17px; }
+#home .texas-contact-links .texas-contact-external { font-size:10px; }
+@media(max-width:1099px) {
+  #home .texas-service-badge { width:min(280px,100%); margin:20px auto 0; }
+  #home .texas-map-visual { width:165px; }
+}
+@media(prefers-reduced-motion:reduce) { #home .texas-contact-links a { transition:none; } }
