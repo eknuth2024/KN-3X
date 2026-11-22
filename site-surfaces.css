@@ -379,3 +379,16 @@ body > .project-mobile-nav a[aria-current="page"]::after {
   #home .texas-service-badge { grid-template-columns:minmax(0,1fr) 135px; gap:8px; }
   #home .texas-map-visual { width:135px; }
 }
+
+/* Center the mobile contact/map group as a compact unit. */
+@media(max-width:767px) {
+  #home .texas-service-badge {
+    width:max-content; max-width:100%;
+    grid-template-columns:max-content 150px;
+    column-gap:14px; margin-left:auto; margin-right:auto;
+  }
+  #home .texas-contact-links { align-items:center; }
+}
+@media(max-width:374px) {
+  #home .texas-service-badge { grid-template-columns:max-content 135px; column-gap:10px; }
+}
