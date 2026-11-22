@@ -413,3 +413,16 @@ body > .project-mobile-nav a[aria-current="page"]::after {
   #main-content #home .texas-contact-links a { grid-column:auto; grid-row:auto; }
   #main-content #home .texas-contact-links a[href^="mailto:"] { font-size:11px; padding:4px 7px; gap:4px; }
 }
+
+/* Uniform contact buttons, lighter map, and clearer estimate typography. */
+#home .texas-map-visual svg path { fill:#79838f; }
+#main-content #home .texas-contact-links a { box-sizing:border-box; width:100%; }
+#main-content #home .hero-search-panel #hero-zip { font-size:16px; font-weight:600; }
+#main-content #home .hero-search-panel button[type="submit"] { font-size:14px; }
+@media(max-width:767px) {
+  #home .texas-contact-links { width:100%; align-items:stretch; }
+  #main-content #home .texas-contact-links a,
+  #main-content #home .texas-contact-links .texas-contact-phone { width:100%; }
+  #main-content #home .hero-search-panel button[type="submit"] { font-size:14px; }
+  #main-content #home .hero-search-panel #hero-zip { font-size:16px; }
+}
