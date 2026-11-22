@@ -93,7 +93,7 @@ body > .project-mobile-nav { display:none; }
 /* Dark gray service selector and trust badges over a slightly deeper gray hero. */
 #main-content #home { background-color:#cbd1d8; }
 #home > .absolute.inset-0 > .bg-gradient-to-t {
-  background-image:linear-gradient(to top,#cbd1d8,rgb(203 209 216 / 86%),rgb(203 209 216 / 72%));
+  background-image:linear-gradient(to top,#cbd1d8 0%,rgb(203 209 216 / 62%) 35%,rgb(203 209 216 / 50%) 100%);
 }
 #main-content #home .hero-search-panel {
   background-color:rgb(61 68 78 / 97%); border-color:#626c7a;
@@ -154,3 +154,50 @@ body > .project-mobile-nav { display:none; }
   #home .texas-map-visual { width:165px; }
 }
 @media(prefers-reduced-motion:reduce) { #home .texas-contact-links a { transition:none; } }
+
+/* Compact contact chips and a clearer house photograph. */
+#home > .absolute.inset-0 > .bg-gradient-to-t {
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+#home .texas-contact-links { align-items:center; gap:5px; margin-top:5px; }
+#main-content #home .texas-contact-links a {
+  width:fit-content; min-height:34px; padding:6px 10px; gap:6px;
+  border-radius:8px; font-size:11px; box-shadow:none;
+}
+#home .texas-contact-links i { font-size:14px; }
+#home .texas-contact-links .texas-contact-external { font-size:9px; }
+
+/* Glossy translucent selection for desktop and mobile navigation. */
+.header-navigation > a, body > .project-mobile-nav a {
+  isolation:isolate; overflow:hidden; border:1px solid transparent;
+  transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,transform .18s ease,color .22s ease;
+}
+.header-navigation > a[aria-current="page"],
+body > .project-mobile-nav a[aria-current="page"],
+.header-navigation > a:focus-visible,
+body > .project-mobile-nav a:focus-visible {
+  color:#ffad7e;
+  background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.055) 55%,rgba(255,255,255,.10));
+  border-color:rgba(255,255,255,.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.07),0 4px 14px rgba(0,0,0,.20);
+  backdrop-filter:blur(18px) saturate(170%);
+  -webkit-backdrop-filter:blur(18px) saturate(170%);
+}
+.header-navigation > a[aria-current="page"]::after,
+body > .project-mobile-nav a[aria-current="page"]::after {
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:1;
+  background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 42%,rgba(255,255,255,.035));
+}
+.header-navigation > a:active,body > .project-mobile-nav a:active { transform:scale(.96); }
+@media(hover:hover) {
+  .header-navigation > a:hover,body > .project-mobile-nav a:hover {
+    background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.05));
+    border-color:rgba(255,255,255,.25);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.30),0 4px 14px rgba(0,0,0,.16);
+    backdrop-filter:blur(18px) saturate(170%); -webkit-backdrop-filter:blur(18px) saturate(170%);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+ .header-navigation > a,body > .project-mobile-nav a { transition:none; }
+ .header-navigation > a:active,body > .project-mobile-nav a:active { transform:none; }
+}
