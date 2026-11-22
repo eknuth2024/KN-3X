@@ -86,3 +86,6 @@ body > .project-mobile-nav { display:none; }
   #main-content #home, #main-content #services, #main-content #gallery,
   #main-content #contact, #main-content #cad-fabrication { scroll-margin-top:104px; }
 }
+
+/* Keep white lettering on orange action buttons in the light theme. */
+#main-content button.text-white, #main-content button .text-white { color:#fff; }
