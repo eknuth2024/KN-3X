@@ -110,3 +110,25 @@ body > .project-mobile-nav { display:none; }
   background-color:#3d444e; border-color:#626c7a; color:#f3f4f6;
 }
 #main-content #home .hero-trust-badge .text-brand-orange { color:#ff9b62; }
+
+/* Distinct light input surfaces make the service dropdown and ZIP field recognizable. */
+#main-content #home .hero-search-panel select,
+#main-content #home .hero-search-panel input {
+  min-width:0;
+  min-height:44px;
+  padding:10px 12px;
+  border:1px solid #aeb8c5;
+  border-radius:8px;
+  background-color:#e8ecf1;
+  color:#202833;
+  color-scheme:light;
+}
+#main-content #home .hero-search-panel select { appearance:auto; }
+#main-content #home .hero-search-panel option { background-color:#e8ecf1; color:#202833; }
+#main-content #home .hero-search-panel input::placeholder { color:#596575; opacity:1; }
+#main-content #home .hero-search-panel select:focus-visible,
+#main-content #home .hero-search-panel input:focus-visible {
+  outline:2px solid #ff9b62;
+  outline-offset:2px;
+  border-color:#ff9b62;
+}
