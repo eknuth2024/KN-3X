@@ -89,3 +89,24 @@ body > .project-mobile-nav { display:none; }
 
 /* Keep white lettering on orange action buttons in the light theme. */
 #main-content button.text-white, #main-content button .text-white { color:#fff; }
+
+/* Dark gray service selector and trust badges over a slightly deeper gray hero. */
+#main-content #home { background-color:#cbd1d8; }
+#home > .absolute.inset-0 > .bg-gradient-to-t {
+  background-image:linear-gradient(to top,#cbd1d8,rgb(203 209 216 / 86%),rgb(203 209 216 / 72%));
+}
+#main-content #home .hero-search-panel {
+  background-color:rgb(61 68 78 / 97%); border-color:#626c7a;
+}
+#main-content #home .hero-search-panel label { color:#d2d8e1; }
+#main-content #home .hero-search-panel select,
+#main-content #home .hero-search-panel input {
+  background-color:transparent; color:#fff;
+}
+#main-content #home .hero-search-panel option { background-color:#3d444e; color:#fff; }
+#main-content #home .hero-search-panel .text-gray-500 { color:#d2d8e1; }
+#main-content #home .hero-search-panel .text-brand-orange { color:#ff9b62; }
+#main-content #home .hero-trust-badge {
+  background-color:#3d444e; border-color:#626c7a; color:#f3f4f6;
+}
+#main-content #home .hero-trust-badge .text-brand-orange { color:#ff9b62; }
