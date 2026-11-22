@@ -392,3 +392,16 @@ body > .project-mobile-nav a[aria-current="page"]::after {
 @media(max-width:374px) {
   #home .texas-service-badge { grid-template-columns:max-content 135px; column-gap:10px; }
 }
+
+/* Keep the complete email visible beside the centered mobile map. */
+@media(max-width:767px) {
+  #home .texas-service-badge { grid-template-columns:minmax(0,180px) 150px; column-gap:8px; }
+  #main-content #home .texas-contact-links a[href^="mailto:"] {
+    font-size:10px; padding:4px 7px; gap:4px;
+  }
+  #home .texas-contact-links a[href^="mailto:"] i { font-size:11px; }
+}
+@media(max-width:374px) {
+  #home .texas-service-badge { grid-template-columns:minmax(0,180px) 135px; column-gap:4px; }
+  #main-content #home .texas-contact-links a[href^="mailto:"] { font-size:9px; padding:4px 5px; }
+}
