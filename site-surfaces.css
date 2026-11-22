@@ -361,7 +361,7 @@ body > .project-mobile-nav a[aria-current="page"]::after {
   #home .hero-search-panel form > div > .flex {
     position:relative; width:100%; min-width:0; padding:0;
   }
-  #home .hero-search-panel form > div > .flex > i {
+  #home .hero-search-panel form > div > div.flex > i {
     position:absolute; left:11px; top:50%; transform:translateY(-50%);
     margin:0; pointer-events:none; z-index:1;
   }
