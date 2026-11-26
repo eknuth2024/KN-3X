@@ -263,7 +263,7 @@
 
 .refined-intro{grid-template-columns:1fr;gap:0;margin-bottom:24px}.refined-intro p{max-width:760px}
 </style>
-  <script src="language.js?v=phone-20261113" defer></script>
+  <script src="language.js?v=estimate-email-20261125" defer></script>
   <script src="service-carousel.js?v=1" defer></script>
 <link rel="canonical" href="https://kn3xproject.com/carpentry.html">
 <link rel="stylesheet" href="assets/services/service-details.css?v=3">
@@ -276,7 +276,11 @@
   <meta name="theme-color" content="#0D0F12">
   <meta name="apple-mobile-web-app-title" content="KN3X Project">
   <link rel="stylesheet" href="site-surfaces.css?v=20261121-medium-footer">
-</head>
+<style>
+#estimateForm .required-marker,#handymanForm .required-marker{color:#ff5e00;font-size:16px;font-weight:800;line-height:1}
+#estimateForm :is(input,select,textarea)[required],#handymanForm :is(input,select,textarea)[required]{border-color:#ff5e00}
+#estimateForm :is(input,select,textarea):user-invalid,#handymanForm :is(input,select,textarea):user-invalid{border-color:#ef4444;outline-color:#ef4444}
+</style></head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
 
   <!-- TOP BAR: CONTACT & REGION (COMPACTO EN MÓVIL) -->
@@ -417,21 +421,25 @@
 <input type="hidden" name="Language" value="en">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div>
-          <label for="estimateName" class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+          <label for="estimateName" class="block text-xs font-semibold text-gray-300 mb-1"><span>Your Name</span> <span class="required-marker" aria-hidden="true">*</span></label>
           <input type="text" id="estimateName" name="name" autocomplete="name" maxlength="100" required placeholder="John Doe" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+        </div>
+        <div>
+          <label for="estimateEmail" class="block text-xs font-semibold text-gray-300 mb-1"><span>Email Address</span> <span class="required-marker" aria-hidden="true">*</span></label>
+          <input type="email" id="estimateEmail" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange">
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <div>
-            <label for="estimatePhone" class="block text-xs font-semibold text-gray-300 mb-1">Phone Number</label>
+            <label for="estimatePhone" class="block text-xs font-semibold text-gray-300 mb-1"><span>Phone Number</span> <span class="required-marker" aria-hidden="true">*</span></label>
             <input type="tel" id="estimatePhone" name="phone" autocomplete="tel" maxlength="40" required placeholder="(512) 000-0000" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1">Zip Code</label>
+            <label for="modalZip" class="block text-xs font-semibold text-gray-300 mb-1"><span>Zip Code</span> <span class="required-marker" aria-hidden="true">*</span></label>
             <input type="text" id="modalZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required placeholder="78701" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
           </div>
         </div>
         <div>
-          <label for="modalService" class="block text-xs font-semibold text-gray-300 mb-1">Select Service</label>
+          <label for="modalService" class="block text-xs font-semibold text-gray-300 mb-1"><span>Select Service</span> <span class="required-marker" aria-hidden="true">*</span></label>
           <select id="modalService" name="service" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
 <option value="Painting">Interior &amp; Exterior Painting</option>
 <option value="Landscaping">Landscaping &amp; Walkways</option>

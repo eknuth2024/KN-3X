@@ -7,6 +7,7 @@
   Object.assign(spanish,{"Reviewing printed architectural plans with a pencil and scale ruler.":"Revisión de planos arquitectónicos impresos con lápiz y regla de escala.","Illustrative CAD workstation showing an isometric 3D mounting bracket.":"Imagen ilustrativa de un programa CAD con un soporte 3D en vista isométrica.","3D printer nozzle depositing orange filament on the print bed.":"Cabezal de impresora 3D depositando filamento naranja en la base de impresión.","Illustrative image":"Imagen ilustrativa"});
   Object.assign(spanish,{"3D printer producing an orange textured vase.":"Impresora 3D creando un jarrón naranja con textura."});
   Object.assign(spanish,{"3D printer producing a white spiral vase.":"Impresora 3D creando un jarrón blanco en espiral."});
+  Object.assign(spanish,{"Email Address":"Correo electrónico","you@example.com":"tu@ejemplo.com"});
   const KEY = 'kn3x-language';
   const normalize = text => text.trim().replace(/\s+/g, ' ');
   let language = 'en';

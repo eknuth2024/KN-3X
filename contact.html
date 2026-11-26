@@ -246,7 +246,7 @@
 
 .header-navigation a[aria-current="page"],.project-mobile-nav a[aria-current="page"]{color:#ff5e00;background:rgba(255,255,255,.06)}
 </style>
-  <script src="language.js?v=phone-20261113" defer></script>
+  <script src="language.js?v=estimate-email-20261125" defer></script>
   
 <link rel="canonical" href="https://kn3x.knuth.me/contact.html">
 
@@ -258,7 +258,11 @@
   <meta name="theme-color" content="#0D0F12">
   <meta name="apple-mobile-web-app-title" content="KN3X Project">
   <link rel="stylesheet" href="site-surfaces.css?v=20261121-medium-footer">
-</head>
+<style>
+#estimateForm .required-marker,#handymanForm .required-marker{color:#ff5e00;font-size:16px;font-weight:800;line-height:1}
+#estimateForm :is(input,select,textarea)[required],#handymanForm :is(input,select,textarea)[required]{border-color:#ff5e00}
+#estimateForm :is(input,select,textarea):user-invalid,#handymanForm :is(input,select,textarea):user-invalid{border-color:#ef4444;outline-color:#ef4444}
+</style></head>
 <body class="bg-[#0B0D10] text-gray-200 font-sans antialiased selection:bg-[#FF5E00] selection:text-white">
 
   <!-- TOP BAR: CONTACT & REGION (COMPACTO EN MÓVIL) -->
@@ -334,20 +338,20 @@
 <input type="hidden" name="subject" value="KN3X — New service request">
 <input type="hidden" name="Language" value="en">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-        <div><label for="handymanName" class="block text-sm mb-1">Your name</label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-        <div><label for="handymanEmail" class="block text-sm mb-1">Email for our reply</label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div><label for="handymanName" class="block text-sm mb-1"><span>Your name</span> <span class="required-marker" aria-hidden="true">*</span></label><input id="handymanName" name="name" autocomplete="name" maxlength="100" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+        <div><label for="handymanEmail" class="block text-sm mb-1"><span>Email for our reply</span> <span class="required-marker" aria-hidden="true">*</span></label><input type="email" id="handymanEmail" name="email" autocomplete="email" maxlength="254" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div><label for="handymanPhone" class="block text-sm mb-1">Phone (optional)</label><input type="tel" id="handymanPhone" name="phone" autocomplete="tel" maxlength="40" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
-          <div><label for="handymanZip" class="block text-sm mb-1">ZIP code</label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
+          <div><label for="handymanZip" class="block text-sm mb-1"><span>ZIP code</span> <span class="required-marker" aria-hidden="true">*</span></label><input id="handymanZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         </div>
-        <div><label for="projectService" class="block text-sm mb-1">Project Area</label><select id="projectService" name="service" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base text-white" required>
+        <div><label for="projectService" class="block text-sm mb-1"><span>Project Area</span> <span class="required-marker" aria-hidden="true">*</span></label><select id="projectService" name="service" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base text-white" required>
 <option value="Painting">Interior &amp; Exterior Painting</option>
 <option value="Landscaping">Landscaping &amp; Walkways</option>
 <option value="Plumbing">Plumbing</option>
 <option value="Carpentry">Carpentry &amp; Outdoor Structures</option>
 <option value="Electrical">Residential Electrical Installations</option>
 <option value="Networks">Network &amp; Internet Installation</option>
-</select></div><div><label for="handymanJob" class="block text-sm mb-1">Tell Us About the Work</label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Paint two rooms, build a pergola or install Ethernet in a home office. Include the location and approximate scope." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
+</select></div><div><label for="handymanJob" class="block text-sm mb-1"><span>Tell Us About the Work</span> <span class="required-marker" aria-hidden="true">*</span></label><textarea id="handymanJob" name="job" rows="4" maxlength="2000" required placeholder="Example: Paint two rooms, build a pergola or install Ethernet in a home office. Include the location and approximate scope." class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></textarea></div>
         <div><label for="handymanAvailability" class="block text-sm mb-1">Preferred days and times (optional)</label><input id="handymanAvailability" name="availability" maxlength="200" placeholder="Example: Saturday morning or weekdays after 4 pm" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-3 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange"></div>
         <button type="submit" class="w-full min-h-[44px] bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-lg">Send Service Request</button>
         <p class="text-xs text-gray-400">Complete the submission on the next screen. Prefer to speak with us? <a href="tel:5129993239" class="text-brand-orange">(512) 999-3239</a>.</p>
@@ -425,21 +429,25 @@
 <input type="hidden" name="Language" value="en">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div>
-          <label for="estimateName" class="block text-xs font-semibold text-gray-300 mb-1">Your Name</label>
+          <label for="estimateName" class="block text-xs font-semibold text-gray-300 mb-1"><span>Your Name</span> <span class="required-marker" aria-hidden="true">*</span></label>
           <input type="text" id="estimateName" name="name" autocomplete="name" maxlength="100" required placeholder="John Doe" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
+        </div>
+        <div>
+          <label for="estimateEmail" class="block text-xs font-semibold text-gray-300 mb-1"><span>Email Address</span> <span class="required-marker" aria-hidden="true">*</span></label>
+          <input type="email" id="estimateEmail" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-base sm:text-sm text-white focus:outline-none focus:border-brand-orange">
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <div>
-            <label for="estimatePhone" class="block text-xs font-semibold text-gray-300 mb-1">Phone Number</label>
+            <label for="estimatePhone" class="block text-xs font-semibold text-gray-300 mb-1"><span>Phone Number</span> <span class="required-marker" aria-hidden="true">*</span></label>
             <input type="tel" id="estimatePhone" name="phone" autocomplete="tel" maxlength="40" required placeholder="(512) 000-0000" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1">Zip Code</label>
+            <label for="modalZip" class="block text-xs font-semibold text-gray-300 mb-1"><span>Zip Code</span> <span class="required-marker" aria-hidden="true">*</span></label>
             <input type="text" id="modalZip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required placeholder="78701" class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
           </div>
         </div>
         <div>
-          <label for="modalService" class="block text-xs font-semibold text-gray-300 mb-1">Select Service</label>
+          <label for="modalService" class="block text-xs font-semibold text-gray-300 mb-1"><span>Select Service</span> <span class="required-marker" aria-hidden="true">*</span></label>
           <select id="modalService" name="service" required class="w-full bg-[#12151C] border border-brand-border rounded-lg px-3 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-brand-orange">
 <option value="Painting">Interior &amp; Exterior Painting</option>
 <option value="Landscaping">Landscaping &amp; Walkways</option>
