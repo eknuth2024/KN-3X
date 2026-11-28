@@ -13,6 +13,7 @@
   Object.assign(spanish,{"Handyman service":"Handyman service","Choose a handyman task":"Selecciona un trabajo de Handyman","How would you like to contact us?":"¿Cómo prefieres contactarnos?","Call":"Llamar","Send SMS":"Enviar SMS","TV Wall Mount Installation":"Instalación de soportes de pared para televisores","Doors & Cabinet Adjustments":"Ajustes de puertas y gabinetes","Furniture Assembly":"Armado de muebles","Shelves, Curtains & Wall Accessories":"Repisas, cortinas y accesorios de pared","Drywall Patches & Paint Touch-ups":"Parches de drywall y retoques de pintura","Caulking & Weatherstripping":"Sellado de juntas y burletes","Home Repair Checklist & More":"Lista de reparaciones del hogar y más"});
   Object.assign(spanish,{"Handyman":"Handyman","Select a service":"Selecciona un servicio","TV Wall Mount Installation":"Instalación de soportes de pared para televisores","Doors & Cabinet Adjustments":"Ajustes de puertas y gabinetes","Furniture Assembly":"Armado de muebles","Shelves, Curtains & Wall Accessories":"Repisas, cortinas y accesorios de pared","Drywall Patches & Paint Touch-ups":"Parches de drywall y retoques de pintura","Caulking & Weatherstripping":"Sellado de juntas y burletes","Home Repair Checklist & More":"Lista de reparaciones del hogar y más"});
   Object.assign(spanish,{"Get Free Estimate":"Cotización gratis"});
+  Object.assign(spanish,{"Select service":"Seleccionar servicio"});
   const KEY = 'kn3x-language';
   const normalize = text => text.trim().replace(/\s+/g, ' ');
   let language = 'en';
