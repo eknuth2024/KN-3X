@@ -575,3 +575,23 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
 }
 
 }
+
+/* Slightly wider desktop ZIP and mobile Handyman contact refinements. */
+@media(min-width:768px){
+ #main-content #home .hero-request-panels .hero-search-panel form{grid-template-columns:minmax(0,1fr) 94px 142px}
+}
+@media(min-width:768px) and (max-width:1099px){
+ #main-content #home .hero-request-panels .hero-search-panel form{grid-template-columns:minmax(0,1fr) 80px 130px}
+ #main-content #home .hero-request-panels .hero-search-panel button[type="submit"]{font-size:11px}
+}
+@media(max-width:767px){
+ #main-content #home .hero-request-panels > .hero-handyman-panel{background:#f56500;border-color:#ffaf72}
+ #main-content #home .hero-handyman-selection{grid-template-columns:100px minmax(0,180px);justify-content:space-between;gap:10px}
+ #main-content #home .hero-handyman-selection h2{font-size:20px;line-height:1.2}
+ #main-content #home #handyman-service-select{height:44px;min-height:44px;font-size:16px}
+ #main-content #home .hero-handyman-contacts{display:flex;justify-content:flex-end;gap:10px}
+ #main-content #home .hero-handyman-contacts a{box-sizing:border-box;width:44px;height:44px;min-width:44px;padding:0;font-size:19px}
+ #main-content #home .hero-handyman-contacts a span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ #main-content #home .hero-handyman-call{background:#188348;border:1px solid #86d4a5}
+ #main-content #home .hero-handyman-sms{background:#1766cb;border:1px solid #95c6ff}
+}
