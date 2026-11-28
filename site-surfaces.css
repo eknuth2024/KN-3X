@@ -492,3 +492,36 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  #home .hero-handyman-section h2{font-size:18px}
  #home .hero-handyman-section .hero-handyman-link{max-width:none;width:100%}
 }
+
+/* Handyman is an independent header dropdown beside Free Estimate. */
+.handyman-menu{position:relative;color:#fff}
+.handyman-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:9px 13px;background:#354255;border:1px solid #8795a8;border-radius:10px;font-size:13px;font-weight:700;white-space:nowrap}
+.handyman-menu summary::-webkit-details-marker{display:none}
+.handyman-menu summary:focus-visible,.handyman-dropdown :is(button,a):focus-visible{outline:3px solid #ff9b62;outline-offset:3px}
+.handyman-menu[open] summary{background:#4a586e;border-color:#ff9b62}
+.handyman-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:360px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 180px);overflow-y:auto;overscroll-behavior:contain;padding:14px;background:#202a38;border:1px solid #6e7f95;border-radius:16px;box-shadow:0 18px 50px #0009;z-index:60}
+.handyman-menu-title{font-size:14px;font-weight:800;margin:0 0 10px;color:#fff}
+.handyman-task-list{display:grid;gap:6px}
+.handyman-task-list button{display:flex;align-items:center;gap:10px;text-align:left;width:100%;min-height:44px;padding:10px;border:1px solid #566375;border-radius:9px;background:#303d50;color:#fff;font-size:14px;line-height:1.4}
+.handyman-task-list button i{width:20px;color:#ffae7e;text-align:center;flex-shrink:0}
+.handyman-task-list button:hover,.handyman-task-list button[aria-pressed="true"]{border-color:#ff9b62;background:#4a3c35}
+.handyman-contact[hidden]{display:none}
+.handyman-contact{margin-top:12px;padding-top:12px;border-top:1px solid #657387}
+.handyman-selected{font-size:14px;font-weight:750;color:#fff;line-height:1.4}
+.handyman-contact-hint{font-size:12px;color:#dce2ec;margin:6px 0 10px}
+.handyman-contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.handyman-contact-actions a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border-radius:10px;font-size:14px;font-weight:750;color:#fff;text-decoration:none}
+.handyman-contact-actions .handyman-call{background:#b94705}
+.handyman-contact-actions .handyman-sms{background:#246b45}
+#main-content #home .hero-search-panel form{grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr)}
+@media(min-width:1024px) and (max-width:1279px){.header-actions{gap:8px}.header-actions > a[href^="tel:"]{display:none}}
+@media(max-width:767px){
+ .site-header-row{height:auto!important;min-height:80px;display:grid!important;grid-template-columns:minmax(0,1fr);gap:8px;padding-top:10px;padding-bottom:10px}
+ .site-header-row .header-brand{justify-content:center}
+ .site-header-row .header-brand img{height:48px}
+ .site-header-row .header-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .site-header-row .header-actions > a[href^="tel:"]{display:none}
+ .header-actions > button,.handyman-menu summary{width:100%;min-height:42px;font-size:12px;padding:9px 8px}
+ .handyman-dropdown{position:fixed;top:172px;right:12px;left:12px;width:auto;max-width:none;max-height:calc(100dvh - 270px)}
+ #main-content #home .hero-search-panel form{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
