@@ -525,3 +525,8 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  .handyman-dropdown{position:fixed;top:172px;right:12px;left:12px;width:auto;max-width:none;max-height:calc(100dvh - 270px)}
  #main-content #home .hero-search-panel form{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+.handyman-dropdown{white-space:normal;overflow-x:hidden}
+.handyman-task-list button{white-space:normal;min-width:0}
+.handyman-task-list button span{min-width:0;overflow-wrap:anywhere}
+.handyman-selected{white-space:normal;overflow-wrap:anywhere}
