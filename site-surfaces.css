@@ -547,6 +547,8 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  #main-content #home .texas-contact-links a i{color:#fff}
 }
 
+@media(min-width:768px){
+
 /* Keep each request card on one compact horizontal row. */
 #main-content #home .hero-request-panels{grid-auto-rows:auto}
 #main-content #home .hero-request-panels > .hero-search-panel,
@@ -571,23 +573,5 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  #home .hero-handyman-contacts a{padding:0;width:44px}
  #main-content #home .hero-handyman-selection h2{font-size:22px}
 }
-@media(max-width:767px){
- #main-content #home .hero-request-panels{grid-auto-rows:1fr}
- #main-content #home .hero-request-panels > .hero-search-panel,
- #main-content #home .hero-request-panels > .hero-handyman-panel{min-height:84px;padding:10px}
- #main-content #home .hero-request-panels .hero-search-panel form{grid-template-columns:minmax(0,1fr) 60px 116px;gap:6px}
- #main-content #home .hero-search-panel label{font-size:9px;white-space:nowrap;padding-left:0;padding-right:0}
- #main-content #home .hero-search-panel select{padding-left:8px;padding-right:6px;font-size:16px}
- #home .hero-search-panel form > div:first-child i{display:none}
- #main-content #home .hero-request-panels .hero-search-panel button[type="submit"]{font-size:11px;padding:0 5px}
- #main-content #home .hero-request-panels > .hero-handyman-panel{grid-template-columns:auto minmax(0,1fr) 94px;gap:6px}
- #main-content #home .hero-handyman-selection h2{font-size:22px}
- #main-content #home #handyman-service-select{font-size:16px;padding-left:6px;padding-right:4px}
- #home .hero-handyman-contacts{gap:6px}
- #home .hero-handyman-contacts a{width:44px;padding:0;min-width:44px;font-size:17px}
- #home .hero-handyman-contacts a span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-}
-@media(max-width:359px){
- #main-content #home .hero-request-panels .hero-search-panel form{grid-template-columns:minmax(0,1fr) 55px 108px}
- #main-content #home .hero-handyman-selection h2{font-size:19px}
+
 }
