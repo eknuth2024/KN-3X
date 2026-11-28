@@ -595,3 +595,18 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  #main-content #home .hero-handyman-call{background:#188348;border:1px solid #86d4a5}
  #main-content #home .hero-handyman-sms{background:#1766cb;border:1px solid #95c6ff}
 }
+
+/* Mobile Handyman: title, selector and contact icons on one row. */
+@media(max-width:767px){
+ #main-content #home .hero-request-panels{grid-auto-rows:auto}
+ #main-content #home .hero-request-panels > .hero-handyman-panel{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px;min-height:70px;padding:10px}
+ #main-content #home .hero-handyman-selection{display:contents}
+ #main-content #home .hero-handyman-selection label{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ #main-content #home .hero-handyman-selection h2{font-size:20px;white-space:nowrap;line-height:44px;margin:0}
+ #main-content #home .hero-handyman-selection > div{min-width:0}
+ #main-content #home #handyman-service-select{width:100%;min-width:0;max-width:100%;padding-left:6px;padding-right:4px}
+ #main-content #home .hero-handyman-contacts{gap:6px;align-items:center}
+}
+@media(max-width:359px){
+ #main-content #home .hero-handyman-selection h2{font-size:18px}
+}
