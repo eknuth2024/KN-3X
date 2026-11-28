@@ -518,3 +518,7 @@ body > footer [class*="border-brand-border"] { border-color:#929dac; }
  #home .hero-handyman-selection{grid-template-columns:120px minmax(0,1fr)}
  #main-content #home .hero-handyman-selection h2{font-size:24px}
 }
+
+#home .hero-request-panels > .hero-search-panel{order:0}
+#home .hero-request-panels > .hero-handyman-panel{order:1}
+@media(max-width:767px){#home .hero-request-panels{grid-auto-rows:1fr}}
