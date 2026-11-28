@@ -256,7 +256,7 @@
 
 .header-navigation a[aria-current="page"],.project-mobile-nav a[aria-current="page"]{color:#ff5e00;background:rgba(255,255,255,.06)}
 </style>
-  <script src="language.js?v=handyman-contact-20261128" defer></script>
+  <script src="language.js?v=hero-handyman-20261128" defer></script>
   
 <link rel="canonical" href="https://kn3x.knuth.me/">
 
@@ -267,7 +267,7 @@
   <link rel="manifest" href="/site.webmanifest?v=20261119">
   <meta name="theme-color" content="#0D0F12">
   <meta name="apple-mobile-web-app-title" content="KN3X Project">
-  <link rel="stylesheet" href="site-surfaces.css?v=handyman-contact-20261128-2">
+  <link rel="stylesheet" href="site-surfaces.css?v=hero-handyman-20261128">
 <style>
 #estimateForm .required-marker,#handymanForm .required-marker{color:#ff5e00;font-size:16px;font-weight:800;line-height:1}
 #estimateForm :is(input,select,textarea)[required],#handymanForm :is(input,select,textarea)[required]{border-color:#ff5e00}
@@ -334,7 +334,7 @@
         <button onclick="openEstimateModal()" class="bg-brand-orange hover:bg-brand-orangeDark text-white font-bold text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-lg shadow-brand-orange/20 transition transform hover:-translate-y-0.5 whitespace-nowrap">
           Free Estimate
         </button>
-<details class="handyman-menu"><summary><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><span>Handyman service</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="handyman-dropdown"><p class="handyman-menu-title">Choose a handyman task</p><div class="handyman-task-list"><button type="button" data-handyman-task="tv" aria-pressed="false"><i class="fa-solid fa-tv" aria-hidden="true"></i><span style="white-space:normal">TV Wall Mount Installation</span></button><button type="button" data-handyman-task="doors" aria-pressed="false"><i class="fa-solid fa-door-open" aria-hidden="true"></i><span style="white-space:normal">Doors &amp; Cabinet Adjustments</span></button><button type="button" data-handyman-task="furniture" aria-pressed="false"><i class="fa-solid fa-couch" aria-hidden="true"></i><span style="white-space:normal">Furniture Assembly</span></button><button type="button" data-handyman-task="mounting" aria-pressed="false"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span style="white-space:normal">Shelves, Curtains &amp; Wall Accessories</span></button><button type="button" data-handyman-task="drywall" aria-pressed="false"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i><span style="white-space:normal">Drywall Patches &amp; Paint Touch-ups</span></button><button type="button" data-handyman-task="caulk" aria-pressed="false"><i class="fa-solid fa-fill-drip" aria-hidden="true"></i><span style="white-space:normal">Caulking &amp; Weatherstripping</span></button><button type="button" data-handyman-task="other" aria-pressed="false"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span style="white-space:normal">Home Repair Checklist &amp; More</span></button></div><div class="handyman-contact" hidden><p class="handyman-selected" aria-live="polite"></p><p class="handyman-contact-hint">How would you like to contact us?</p><div class="handyman-contact-actions"><a class="handyman-call" href="tel:+15129993239"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call</span></a><a class="handyman-sms" href="sms:+15129993239"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i><span>Send SMS</span></a></div></div></div></details>
+
       </div>
     </div>
   
@@ -381,7 +381,7 @@
 </div>
 
       <!-- SEARCH FORM COMPACTO -->
-      <div class="mt-5 sm:mt-10 max-w-3xl mx-auto hero-search-panel bg-brand-card/95 border border-brand-border shadow-2xl p-2.5 sm:p-3 rounded-xl sm:rounded-2xl backdrop-blur-md">
+<div class="hero-request-panels">      <div class="mt-5 sm:mt-10 max-w-3xl mx-auto hero-search-panel bg-brand-card/95 border border-brand-border shadow-2xl p-2.5 sm:p-3 rounded-xl sm:rounded-2xl backdrop-blur-md">
         <form onsubmit="handleSearch(event)" class="grid grid-cols-1 md:grid-cols-12 gap-2">
           
           <div class="md:col-span-5 relative text-left">
@@ -400,7 +400,7 @@
           </div>
 
           <div class="md:col-span-4 relative text-left border-t md:border-t-0 md:border-l border-brand-border/80 pt-1 md:pt-0">
-            <label for="modalZip" class="block text-[10px] sm:text-[11px] font-bold text-gray-400 px-2 sm:px-3 pt-0.5 sm:pt-1 uppercase">Zip Code</label>
+            <label for="hero-zip" class="block text-[10px] sm:text-[11px] font-bold text-gray-400 px-2 sm:px-3 pt-0.5 sm:pt-1 uppercase">Zip Code</label>
             <div class="flex items-center px-2 sm:px-3 py-1">
               <i class="fa-solid fa-location-crosshairs text-gray-500 mr-2 text-xs sm:text-sm"></i>
               <input type="text" id="hero-zip" inputmode="numeric" pattern="[0-9]{5}" required value="78701" placeholder="e.g. 78704" maxlength="5" class="w-full bg-transparent text-white font-medium text-xs sm:text-sm focus:outline-none">
@@ -419,6 +419,7 @@
       </div>
 
 
+<section class="hero-handyman-panel" aria-labelledby="hero-handyman-title"><div class="hero-handyman-selection"><h2 id="hero-handyman-title">Handyman</h2><div><label for="handyman-service-select">Choose a handyman task</label><select id="handyman-service-select"><option value="">Select a service</option><option value="tv">TV Wall Mount Installation</option><option value="doors">Doors &amp; Cabinet Adjustments</option><option value="furniture">Furniture Assembly</option><option value="mounting">Shelves, Curtains &amp; Wall Accessories</option><option value="drywall">Drywall Patches &amp; Paint Touch-ups</option><option value="caulk">Caulking &amp; Weatherstripping</option><option value="other">Home Repair Checklist &amp; More</option></select></div></div><div class="hero-handyman-contacts"><a class="hero-handyman-sms" href="sms:+15129993239"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i><span>Send SMS</span></a><a class="hero-handyman-call" href="tel:+15129993239"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call</span></a></div></section></div>
       <!-- TRUST BADGES -->
       <div class="mt-4 sm:mt-8 flex flex-wrap justify-center items-center gap-2 sm:gap-6 text-[10px] sm:text-xs text-gray-300 font-medium">
         <span class="hero-trust-badge bg-black/40 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10"><i class="fa-solid fa-check text-brand-orange mr-1"></i> Free Estimates</span>
@@ -551,7 +552,7 @@
   </div>
 
   <!-- JAVASCRIPT: SLIDER & FORM HANDLERS -->
-  <script src="site.js?v=handyman-contact-20261128" defer></script>
+  <script src="site.js?v=hero-handyman-20261128" defer></script>
 <nav class="project-mobile-nav" aria-label="Main navigation"><a href="index.html" aria-label="Home" aria-current="page"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="bottom-nav-label">Home</span></a><a href="services.html" aria-label="Services"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><span class="bottom-nav-label">Services</span></a><a href="photo-gallery.html" aria-label="Photo Gallery"><i class="fa-solid fa-images" aria-hidden="true"></i><span class="bottom-nav-label">Photo Gallery</span></a><a href="contact.html" aria-label="Contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="bottom-nav-label">Contact</span></a></nav>
 </body>
 </html>
